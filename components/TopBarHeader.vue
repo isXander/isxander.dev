@@ -6,8 +6,9 @@
             </div>
             <div class="nav-row nav-right">
                 <NuxtLink to="/about">About Me</NuxtLink>
-                <NuxtLink to="/md/photography">Photography</NuxtLink>
-                <NuxtLink to="/projects">Projects</NuxtLink>
+                <NuxtLink to="/photography">Photography</NuxtLink>
+                <NuxtLink to="https://docs.isxander.dev/controlify">Controlify</NuxtLink>
+                <NuxtLink to="https://docs.isxander.dev/yet-another-config-lib">YetAnotherConfigLib</NuxtLink>
             </div>
         </nav>
     </header>

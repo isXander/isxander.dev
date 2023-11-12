@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxt/content",
-    "@nuxt/image",
   ],
   css: [
     "~/assets/css/main.scss",
@@ -13,7 +12,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "~/assets/css/_colors.scss" as *;'
+          additionalData: '@import "~/assets/css/_colors.scss" as *;'
         }
       }
     }
@@ -31,8 +30,5 @@ export default defineNuxtConfig({
         'remark-emoji'
       ]
     }
-  },
-  image: {
-    provider: 'ipx'
   }
 })

@@ -12,7 +12,6 @@
   "devDependencies": {
     "@nuxt/content": "latest",
     "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.0.0",
     "exif-js": "^2.3.0",
     "ipx": "^2.0.0",
     "nuxt": "^3.8.0",

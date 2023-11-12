@@ -28,7 +28,7 @@
         <section id="pictures-hero" class="hero-left hero-section">
             <h1>I take pictures!</h1>
             <h2>I've made a hobby out of taking pictures with my camera.</h2>
-            <Button class="button" to="/md/photography">Photography</Button>
+            <Button class="button" to="/photography">Photography</Button>
         </section>
     </section>
 </template>
