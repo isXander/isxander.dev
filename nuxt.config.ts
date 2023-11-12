@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
   ],
   css: [
-    "~/assets/css/app.scss",
+    "~/assets/css/main.scss",
     '@fortawesome/fontawesome-svg-core/styles.css'
   ],
   vite: {
@@ -16,10 +16,6 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  app: {
-    baseURL: '/',
-    buildAssetsDir: 'assets',
   },
   content: {
     highlight: {
