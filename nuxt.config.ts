@@ -5,14 +5,14 @@ export default defineNuxtConfig({
     "@nuxt/content",
   ],
   css: [
-    "~/assets/css/main.scss",
+    "~/assets/css/app.scss",
     '@fortawesome/fontawesome-svg-core/styles.css'
   ],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "~/assets/css/_colors.scss" as *;'
+          additionalData: '@use "~/assets/css/_colors.scss" as *;'
         }
       }
     }

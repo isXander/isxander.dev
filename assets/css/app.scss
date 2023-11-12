@@ -1,3 +1,4 @@
+@import "~/assets/css/_colors.scss";
 @import "~/assets/css/normalize.css";
 @import "~/assets/css/markdown.scss";
 @import "~/assets/css/util.scss";
@@ -11,7 +12,7 @@ html {
 
 :root {
     color-scheme: dark;
-  }
+}
 
 a {
     color: $primary-lighter-color;
