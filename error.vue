@@ -1,6 +1,6 @@
 <template>
     <NuxtLayout>
-        <HttpError :errorcode="error.statusCode" :errormessage="error.message" :action="handleError"/>
+        <HttpError :errorcode="error.statusCode.toString()" :errormessage="error.message" :action="handleError"/>
     </NuxtLayout>
 </template>
 

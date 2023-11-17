@@ -12,8 +12,10 @@
   "devDependencies": {
     "@nuxt/content": "latest",
     "@nuxt/devtools": "latest",
+    "@types/markdown-it": "^13.0.6",
     "exif-js": "^2.3.0",
     "ipx": "^2.0.0",
+    "markdown-it": "^13.0.2",
     "nuxt": "^3.8.0",
     "remark-emoji": "^4.0.0",
     "sass": "^1.69.5",
