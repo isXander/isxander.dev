@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 import md from 'markdown-it'
+import anchorPlugin from 'markdown-it-anchor'
 
 const props = defineProps<{
     content: string
@@ -12,6 +13,6 @@ const props = defineProps<{
 const rendered_markdown = md({
     linkify: true,
 })
-    .use(require('markdown-it-anchor'))
+    .use(anchorPlugin)
     .render(props.content)
 </script>
