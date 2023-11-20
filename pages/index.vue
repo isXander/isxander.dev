@@ -15,10 +15,10 @@
 
         <section id="mods-hero" class="hero-right hero-section">
             <h1>I make mods!</h1>
-            <h2>
+            <h3>
                 Using Java, I modify Minecraft with bytecode manipulation techniques.
                 I now have over 25 million downloads.
-            </h2>
+            </h3>
             <div class="flex-row margin-left">
                 <Button class="button modrinth-button" to="https://modrinth.com/user/isxander">Modrinth</Button>
                 <Button class="button curseforge-button" to="https://legacy.curseforge.com/members/xanderisdev/projects">CurseForge</Button>
@@ -27,7 +27,7 @@
 
         <section id="pictures-hero" class="hero-left hero-section">
             <h1>I take pictures!</h1>
-            <h2>I've made a hobby out of taking pictures with my camera.</h2>
+            <h3>I've made a hobby out of taking pictures with my camera.</h3>
             <Button class="button" to="/photography">Photography</Button>
         </section>
     </section>
@@ -95,7 +95,7 @@
 
     #pictures-hero {
         background-size: cover;
-        background-image: linear-gradient(rgba(black, 1), rgba(black, 0.8) 3%, rgba(black, 0.8) 66%,rgba($background-color, 1)), url("https://www.isxander.dev/photography/images/MG_0860-Enhanced-NR.jpg");
+        background-image: linear-gradient(rgba(black, 1), rgba(black, 0.8) 3%, rgba(black, 0.8) 66%, rgba($background-color, 1)), url("https://www.isxander.dev/photography/images/MG_0860-Enhanced-NR.jpg");
         background-position: center center;
         background-clip: border-box;
     }

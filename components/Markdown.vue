@@ -11,5 +11,7 @@ const props = defineProps<{
 
 const rendered_markdown = md({
     linkify: true,
-}).render(props.content)
+})
+    .use(require('markdown-it-anchor'))
+    .render(props.content)
 </script>

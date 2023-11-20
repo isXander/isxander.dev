@@ -16,6 +16,7 @@
     "exif-js": "^2.3.0",
     "ipx": "^2.0.0",
     "markdown-it": "^13.0.2",
+    "markdown-it-anchor": "^8.6.7",
     "nuxt": "^3.8.0",
     "remark-emoji": "^4.0.0",
     "sass": "^1.69.5",

@@ -44,6 +44,10 @@ h4 {
     font-size: 1.414rem;
 }
 
+h1, h2, h3, h4 {
+    scroll-margin-top: 4rem;
+}
+
 p {
     font-size: 1rem;
     margin-bottom: 1.3rem;
@@ -52,6 +56,7 @@ p {
 .title-h1 {
     color: $foreground-color-strong;
     font-size: 6rem;
+    margin-left: 1rem;
 }
 
 .button {
@@ -66,4 +71,11 @@ p {
     &:hover {
         background-color: $primary-lighter-color;
     }
+}
+
+.section-card {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $background-color-light;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }

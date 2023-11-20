@@ -1,4 +1,4 @@
-export type ModrinthMod = {
+export interface ModrinthMod {
     slug: string,
     title: string,
     description: string,
