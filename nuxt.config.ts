@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import topLevelAwait from 'vite-plugin-top-level-await'
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -15,7 +16,13 @@ export default defineNuxtConfig({
           additionalData: '@use "~/assets/css/_colors.scss" as *;'
         }
       }
-    }
+    },
+    plugins: [
+      topLevelAwait({
+        promiseExportName: '_tla',
+        promiseImportName: i => `__tla_${i}`,
+      })
+    ]
   },
   content: {
     highlight: {
