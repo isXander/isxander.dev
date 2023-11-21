@@ -4,7 +4,7 @@
     
     <div class="mod-list">
         <NuxtLink class="mod" v-for="[slug, mod] in Object.entries(xanderMods)" :to="`/mods/${slug}`">
-            <img class="mod-icon" :src="mod.icon ?? mrProjects[slug].icon_url" alt="">
+            <img class="mod-icon" :src="mod.icon ?? mrProjects[slug]?.icon_url ?? ``" alt="">
             <div class="mod-title-container">
                 <h1 class="mod-title" v-html="mod.title"></h1>
             </div>
@@ -24,11 +24,17 @@
 <script setup lang="ts">
 let mrProjects: {[key: string]: ModrinthMod} = {}
 
-for (const slug of Object.keys(xanderMods)) {
-    if (xanderMods[slug].sites) {
-        mrProjects[slug] = await useModrinthFetch<ModrinthMod>(`/project/${xanderMods[slug].sites!.mr}`)
-    }
-}
+const slugs = Object.values(xanderMods)
+    .filter(mod => mod.sites?.mr)
+    .map(mod => `\"${mod.sites!.mr}\"`)
+    .join(",")
+const bulkProjects = await useModrinthFetch<ModrinthMod[]>(`/projects?ids=[${slugs}]`)
+
+// put xanderMod mod key into mrProjects with the value of the project
+bulkProjects.forEach(project => {
+    mrProjects[Object.keys(xanderMods).find(key => xanderMods[key].sites?.mr === project.id)!] = project
+})
+
 </script>
 
 <style scoped lang="scss">

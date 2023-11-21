@@ -3,7 +3,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Controlify",
         tags: ["public", "popular"],
         sites: {
-            mr: "controlify",
+            mr: "DOUdJVEm",
             cf: "835847",
         }
     },
@@ -11,7 +11,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Zoomify",
         tags: ["public", "popular"],
         sites: {
-            mr: "zoomify",
+            mr: "w7ThoJFB",
             cf: "574741",
         },
     },
@@ -19,7 +19,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Yet<wbr>Another<wbr>Config<wbr>Lib",
         tags: ["public", "popular"],
         sites: {
-            mr: "yacl",
+            mr: "1eAoo2KR",
             cf: "667299",
         },
     },
@@ -27,7 +27,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Debugify",
         tags: ["public", "popular"],
         sites: {
-            mr: "debugify",
+            mr: "QwxR6Gcd",
             cf: "596224",
         },
     },
@@ -48,7 +48,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Adaptive Tooltips",
         tags: ["public"],
         sites: {
-            mr: "adaptive-tooltips",
+            mr: "wFv8yCxM",
             cf: "704346",
         },
     },
@@ -56,7 +56,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Cull Less Leaves",
         tags: ["public"],
         sites: {
-            mr: "cull-less-leaves",
+            mr: "iG6ZHsUV",
             cf: "619718"
         }
     },
@@ -64,7 +64,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Main Menu Credits",
         tags: ["public"],
         sites: {
-            mr: "main-menu-credits",
+            mr: "qJDfP7WN",
             cf: "618812"
         }
     },
@@ -72,7 +72,7 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "EvergreenHUD",
         tags: ["public", "archived"],
         sites: {
-            mr: "evergreenhud"
+            mr: "1yIQcc2b"
         }
     }
 }
