@@ -1,4 +1,4 @@
-export const xanderMods: XanderMods = {
+export const xanderMods: Record<string, XanderMod> = {
     "controlify": {
         title: "Controlify",
         tags: ["public", "popular"],
@@ -67,11 +67,21 @@ export const xanderMods: XanderMods = {
             mr: "main-menu-credits",
             cf: "618812"
         }
+    },
+    "evergreenhud": {
+        title: "EvergreenHUD",
+        tags: ["public", "archived"],
+        sites: {
+            mr: "evergreenhud"
+        }
     }
 }
 
-export interface XanderMods {
-    [key: string]: XanderMod,
+export const tagIcons: Record<string, string> = {
+    "public": "fa-solid fa-globe",
+    "popular": "fa-solid fa-fire",
+    "commission": "fa-solid fa-dollar-sign",
+    "archived": "fa-solid fa-box-archive",
 }
 
 export interface XanderMod {
@@ -83,7 +93,7 @@ export interface XanderMod {
     icon?: string,
     sites?: {
         mr: string,
-        cf: string,
+        cf?: string,
     },
     downloadReplacement?: {
         text: string,

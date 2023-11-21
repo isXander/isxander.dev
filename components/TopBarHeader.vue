@@ -5,6 +5,7 @@
                 <NuxtLink to="/" id="nav-home">isXander</NuxtLink>
             </div>
             <div class="nav-row nav-right">
+                <NuxtLink to="https://github.com/isXander/"><FontAwesomeIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
                 <NuxtLink to="/about">About Me</NuxtLink>
                 <NuxtLink to="/photography">Photography</NuxtLink>
                 <NuxtLink to="/mods">Mods</NuxtLink>
@@ -20,6 +21,7 @@ header {
     width: 100%;
     backdrop-filter: blur(8px);
     background-color: rgba($background-color, 0.5);
+    z-index: 10;
 }
 
 #header-container {

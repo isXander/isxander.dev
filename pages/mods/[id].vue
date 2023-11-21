@@ -34,7 +34,7 @@
                 Download
             </Button>
             
-            <h4 v-if="mrProject || cfProject" class="download-count">{{ formatNumberMetricUnits((mrProject.downloads ?? 0) + (cfProject.downloadCount ?? 0)) }} downloads</h4>
+            <h4 v-if="mrProject || cfProject" class="download-count">{{ formatNumberMetricUnits((mrProject?.downloads ?? 0) + (cfProject?.downloadCount ?? 0)) }} downloads</h4>
         </div>
     </section>
 
@@ -68,11 +68,19 @@ const modId = route.params.id as string
 
 const mod = xanderMods[modId]
 
-const mrProject = mod.sites ? await $fetch<ModrinthMod>(`https://api.modrinth.com/v2/project/${mod.sites.mr}`) : null
-const cfProject = mod.sites ? (await $fetch<{data: CurseforgeMod}>(`https://api.curse.tools/v1/cf/mods/${mod.sites.cf}`)).data : null
+const mrProject = mod.sites?.mr ? await $fetch<ModrinthMod>(`https://api.modrinth.com/v2/project/${mod.sites.mr}`) : null
+const cfProject = mod.sites?.cf ? (await $fetch<{data: CurseforgeMod}>(`https://api.curse.tools/v1/cf/mods/${mod.sites.cf}`)).data : null
 
 const backdropImage = mod.backdropImage ?? mrProject.gallery.find(image => image.featured === true)?.url
 
+useSeoMeta({
+    title: `${mod.title} - isXander Mod`,
+    ogTitle: `${mod.title} - isXander Mod`,
+    ogDescription: (mod.summary ?? mrProject?.description ?? "No description found.") + ` - isXander's Minecraft mods`,
+    description: (mod.summary ?? mrProject?.description ?? "No description found.") + ` - isXander's Minecraft mods`,
+    ogImage: mod.icon ?? mrProject?.icon_url ?? "https://isxander.dev/icon.png",
+
+})
 </script>
 
 <style scoped lang="scss">
