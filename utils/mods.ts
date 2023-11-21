@@ -16,7 +16,7 @@ export const xanderMods: Record<string, XanderMod> = {
         },
     },
     "yet-another-config-lib": {
-        title: "YetAnotherConfigLib",
+        title: "Yet<wbr>Another<wbr>Config<wbr>Lib",
         tags: ["public", "popular"],
         sites: {
             mr: "yacl",
@@ -36,7 +36,7 @@ export const xanderMods: Record<string, XanderMod> = {
         tags: ["commission"],
         summary: "Touch controls designed for real Bonobo/Apes at ApeInitiative research centre.",
         // @ts-ignore
-        body: await import("~/assets/res/mods/bonobocraft/body.md?raw").then((res) => res.default),
+        body: "/mods/bonobocraft",
         backdropImage: "/mods/bonobocraft/backdrop.webp",
         icon: "/mods/bonobocraft/logo.webp",
         downloadReplacement: {

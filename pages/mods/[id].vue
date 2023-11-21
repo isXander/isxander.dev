@@ -8,7 +8,7 @@
         <div>
             <div id="title">
                 <img :src="mod.icon ?? mrProject.icon_url" alt="project icon" class="title-icon">
-                <h1 class="title-h1">{{ mod.title }}</h1>
+                <h1 class="title-h1" v-html="mod.title"></h1>
             </div>
 
             <h2 class="title-desc">{{ mod.summary ?? mrProject.description }}</h2>
@@ -38,13 +38,28 @@
         </div>
     </section>
 
-    <section class="body">
-        <Markdown v-if="mod.body" :content="mod.body" class="markdown markdown-page"/>
-        <Markdown v-else-if="mrProject" :content="mrProject.body" class="markdown markdown-page"/>
-        <div v-else class="markdown markdown-page">
-            <h1>No body found.</h1>
-        </div>
-    </section>
+    <div class="markdown-page">
+        <section class="body">
+            <ContentDoc v-if="mod.body" :path="mod.body" class="markdown"/>
+            <Markdown v-else-if="mrProject" :content="mrProject.body" class="markdown"/>
+            <div v-else class="markdown">
+                <h1>No body found.</h1>
+            </div>
+        </section>
+
+        <template v-if="mrProject?.gallery?.length > 0">
+            <h1>Gallery</h1>
+            <section id="gallery">
+                <article v-for="image in mrProject?.gallery ?? []" class="gallery-entry">
+                    <img :src="image.url" class="gallery-image">
+                    <div class="gallery-meta">
+                        <h4>{{ image.title }}</h4>
+                        <p>{{ image.description }}</p>
+                    </div>
+                </article>
+            </section>
+        </template>
+    </div>
 </div>
 
 </template>
@@ -86,6 +101,8 @@ useSeoMeta({
 <style scoped lang="scss">
 #header-section {
     background-size: cover;
+    background-position-x: center;
+
     padding: 2rem 0;
     min-height: 75vh;
 
@@ -148,6 +165,39 @@ useSeoMeta({
     }
 }
 
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1rem;
+    place-items: center;
 
+    .gallery-entry {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
 
+        background-color: $background-color-light;
+        border-radius: 1rem;
+
+        width: 100%;
+        height: 100%;
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        .gallery-meta {
+            text-align: center;
+            padding: 0.5rem 1rem;
+            margin: auto 0;
+
+            h4 {
+                margin: 0.5rem 0;
+            }
+        }
+    }
+}
 </style>

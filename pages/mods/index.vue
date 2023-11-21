@@ -6,7 +6,7 @@
         <NuxtLink class="mod" v-for="[slug, mod] in Object.entries(xanderMods)" :to="`/mods/${slug}`">
             <img class="mod-icon" :src="mod.icon ?? mrProjects[slug].icon_url" alt="">
             <div class="mod-title-container">
-                <h1 class="mod-title">{{ mod.title }}</h1>
+                <h1 class="mod-title" v-html="mod.title"></h1>
             </div>
             <p class="mod-summary">{{ mod.summary ?? mrProjects[slug].description  }}</p>
             <div class="mod-tags">
@@ -47,7 +47,7 @@ for (const slug of Object.keys(xanderMods)) {
         grid-template-areas:
             "icon title title"
             "summary summary summary"
-            "tags tags type";
+            "tags tags tags";
         grid-template-columns: 5rem 1fr 1fr;
         gap: .5rem;
 
@@ -78,7 +78,6 @@ for (const slug of Object.keys(xanderMods)) {
             .mod-title {
                 font-size: 1.5rem;
                 margin: 0;
-                overflow-wrap: break-word;
             }
         }
 
