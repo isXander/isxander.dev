@@ -5,10 +5,10 @@
                 <NuxtLink to="/" id="nav-home">isXander</NuxtLink>
             </div>
             <div class="nav-row nav-right">
-                <NuxtLink to="https://github.com/isXander/"><FontAwesomeIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
-                <NuxtLink to="/about">About Me</NuxtLink>
-                <NuxtLink to="/photography">Photography</NuxtLink>
                 <NuxtLink to="/mods">Mods</NuxtLink>
+                <NuxtLink to="/photography">Photography</NuxtLink>
+                <NuxtLink to="/about">About Me</NuxtLink>
+                <NuxtLink to="https://github.com/isXander/"><FontAwesomeIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
             </div>
         </nav>
     </header>
@@ -26,6 +26,7 @@ header {
 
 #header-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: .75rem auto .75rem auto;
@@ -52,20 +53,17 @@ header {
             color: $foreground-color;
         }
 
-        &.nav-left {
-            flex-direction: row;
+        gap: 1.5rem;
+    }
 
-            & > * {
-                margin-right: 1.5rem;
-            }
-        }
+    @media screen and (max-width: 530px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
 
-        &.nav-right {
-            flex-direction: row-reverse;
-
-            & > * {
-                margin-left: 1.5rem;
-            }
+        .nav-row {
+            flex-wrap: wrap;
+            justify-content: center;
         }
     }
 }

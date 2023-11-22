@@ -1,6 +1,6 @@
 <template>
     <img v-if="src" ref="img" :class="`avatar size-${size} ${circle ? 'circle' : ''} ${noShadow ? 'no-shadow' : ''}  ${raised ? 'raised' : ''}`" :src="src" :alt="alt" :loading="loading" @load="updatePixelated" />
-    <svg v-else :class="`avatar size-${size} ${circle ? 'circle' : ''} ${noShadow ? 'no-shadow' : ''} ${raised ? 'raised' : ''
+    <svg v-else :class="`avatar ${circle ? 'circle' : ''} ${noShadow ? 'no-shadow' : ''} ${raised ? 'raised' : ''
         }`" xml:space="preserve" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
         stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 104 104" aria-hidden="true">
         <path fill="none" d="M0 0h103.4v103.4H0z" />
@@ -51,47 +51,47 @@ function updatePixelated() {
 }
 </script>
   
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .avatar {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-inset-lg), var(--shadow-card);
-    height: var(--size) !important;
-    width: var(--size) !important;
+    height: 6rem !important;
+    width: 6rem !important;
     background-color: var(--color-button-bg);
     object-fit: cover;
-    max-width: var(--size) !important;
-    max-height: var(--size) !important;
+    max-width: 6rem !important;
+    max-height: 6rem !important;
 
     &.size-xxs {
-        --size: 1.25rem;
+        --avatar-size: 1.25rem;
         box-shadow: var(--shadow-inset), var(--shadow-card);
         border-radius: var(--radius-sm);
     }
 
     &.size-xs {
-        --size: 2.5rem;
+        --avatar-size: 2.5rem;
         box-shadow: var(--shadow-inset), var(--shadow-card);
         border-radius: var(--radius-sm);
     }
 
     &.size-sm {
-        --size: 3rem;
+        --avatar-size: 3rem;
         box-shadow: var(--shadow-inset), var(--shadow-card);
         border-radius: var(--radius-sm);
     }
 
     &.size-md {
-        --size: 6rem;
+        --avatar-size: 6rem;
         border-radius: var(--radius-lg);
     }
 
     &.size-lg {
-        --size: 9rem;
+        --avatar-size: 9rem;
         border-radius: var(--radius-lg);
     }
 
     &.size-none {
-        --size: unset;
+        --avatar-size: unset;
     }
 
     &.circle {

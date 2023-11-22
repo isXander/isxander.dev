@@ -4,11 +4,13 @@
             <h1>Hello, World!</h1>
             <div class="flex-row margin-right">
                 <Avatar size="lg" circle src="/avatar.png" />
-                <h2>I'm Xander!</h2>
-                <div id="socials">
-                    <NuxtLink to="https://github.com/isXander" target="_blank"><FontAwesomeIcon icon="fa-brands fa-github" size="3x"/></NuxtLink>
-                    <NuxtLink to="https://short.isxander.dev/discord/" target="_blank"><FontAwesomeIcon icon="fa-brands fa-discord" size="3x"/></NuxtLink>
-                    <NuxtLink to="https://instagram.com/isxander.pics/" target="_blank"><FontAwesomeIcon icon="fa-brands fa-instagram" size="3x"/></NuxtLink>
+                <div id="im-xander">
+                    <h2>I'm Xander!</h2>
+                    <div id="socials">
+                        <NuxtLink to="https://github.com/isXander" target="_blank"><FontAwesomeIcon icon="fa-brands fa-github" size="3x"/></NuxtLink>
+                        <NuxtLink to="https://short.isxander.dev/discord/" target="_blank"><FontAwesomeIcon icon="fa-brands fa-discord" size="3x"/></NuxtLink>
+                        <NuxtLink to="https://instagram.com/isxander.pics/" target="_blank"><FontAwesomeIcon icon="fa-brands fa-instagram" size="3x"/></NuxtLink>
+                    </div>
                 </div>
             </div>
         </section>
@@ -43,7 +45,7 @@
 
     h1 {
         color: $foreground-color-strong;
-        font-size: 10rem;
+        font-size: 8rem;
         margin-bottom: 2rem;
         padding-top: 2rem;
     }
@@ -54,9 +56,16 @@
         color: $foreground-color;
     }
 
+    .avatar {
+        height: 9rem !important;
+        width: 9rem !important;
+        max-width: 9rem !important;
+        max-height: 9rem !important;
+    }
+
     .hero-section {
         padding: 0 1rem;
-        height: 95vh;
+        min-height: 95vh;
         width: 100%;
         box-sizing: border-box;
 
@@ -87,6 +96,23 @@
     #hello-hero {
         margin-top: 7.5rem;
         background-image: linear-gradient(rgba(black, 0), rgba(black, 1));
+
+        #im-xander {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
+
+            #socials {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+
+                a {
+                    color: $foreground-color;
+                }
+            }
+        }
     }
 
     #mods-hero {
@@ -98,6 +124,73 @@
         background-image: linear-gradient(rgba(black, 1), rgba(black, 0.8) 3%, rgba(black, 0.8) 66%, rgba($background-color, 1)), url("https://www.isxander.dev/photography/images/MG_0860-Enhanced-NR.jpg");
         background-position: center center;
         background-clip: border-box;
+    }
+
+    @media screen and (max-width: 928px) {
+        h1 {
+            font-size: 6rem;
+        }
+
+        h2 {
+            font-size: 4rem;
+        }
+
+        .avatar {
+            height: 6rem !important;
+            width: 6rem !important;
+            max-width: 6rem !important;
+            max-height: 6rem !important;
+        }
+
+        .fa-3x {
+            font-size: 2rem;
+        }
+
+        .button {
+            font-size: 1rem;
+        }
+
+        .hero-section {
+            min-height: 60vh;
+        }
+
+        #hello-hero {
+            margin-top: 3rem;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        align-items: center;
+
+        h1 {
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        .avatar {
+            height: 4rem !important;
+            width: 4rem !important;
+            max-width: 4rem !important;
+            max-height: 4rem !important;
+        }
+
+        .fa-3x {
+            font-size: 1.5rem;
+        }
+
+        #hello-hero {
+            margin-top: 5rem;
+            
+            #im-xander {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
     }
 }
 
@@ -126,14 +219,5 @@
 
 .curseforge-button {
     background-color: #f16436;
-}
-
-#socials {
-    padding-left: 2rem;
-
-    a {
-        color: $foreground-color;
-        margin-right: 1rem;
-    }
 }
 </style>

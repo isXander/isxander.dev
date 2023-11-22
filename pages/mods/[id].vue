@@ -8,7 +8,7 @@
         <div>
             <div id="title">
                 <img :src="mod.icon ?? mrProject.icon_url" alt="project icon" class="title-icon">
-                <h1 class="title-h1" v-html="mod.title"></h1>
+                <h1 style="text-align: center;;" class="title-h1" v-html="mod.title"></h1>
             </div>
 
             <h2 class="title-desc">{{ mod.summary ?? mrProject.description }}</h2>
@@ -88,9 +88,10 @@ const cfProject = mod.sites?.cf ? (await $fetch<{data: CurseforgeMod}>(`https://
 
 const backdropImage = mod.backdropImage ?? mrProject.gallery.find(image => image.featured === true)?.url
 
+const cleanTitle = mod.title.replaceAll('<wbr>', '')
 useSeoMeta({
-    title: `${mod.title} - isXander Mod`,
-    ogTitle: `${mod.title} - isXander Mod`,
+    title: `${cleanTitle} - isXander Mod`,
+    ogTitle: `${cleanTitle} - isXander Mod`,
     ogDescription: (mod.summary ?? mrProject?.description ?? "No description found.") + ` - isXander's Minecraft mods`,
     description: (mod.summary ?? mrProject?.description ?? "No description found.") + ` - isXander's Minecraft mods`,
     ogImage: mod.icon ?? mrProject?.icon_url ?? "https://isxander.dev/icon.png",
@@ -163,11 +164,43 @@ useSeoMeta({
             margin: 0.5rem 0;
         }
     }
+
+    @media screen and (max-width: 750px) {
+        .title-h1 {
+            font-size: 3rem;
+        }
+
+        .title-desc {
+            font-size: 1.5rem;
+        }
+
+        #title {
+            flex-direction: column;
+
+            .title-icon {
+                height: 4rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 430px) {
+        .title-h1 {
+            font-size: 2.25rem;
+        }
+
+        .title-desc {
+            font-size: 1.5rem;
+        }
+
+        #title .title-icon {
+            height: 3rem;
+        }
+    }
 }
 
 #gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 1rem;
     place-items: center;
 
