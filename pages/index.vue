@@ -121,7 +121,7 @@
 
     #pictures-hero {
         background-size: cover;
-        background-image: linear-gradient(rgba(black, 1), rgba(black, 0.8) 3%, rgba(black, 0.8) 66%, rgba($background-color, 1)), url("https://www.isxander.dev/photography/images/MG_0860-Enhanced-NR.jpg");
+        background-image: linear-gradient(rgba(black, 1), rgba(black, 0.8) 3%, rgba(black, 0.8) 66%, rgba($background-color, 1)), url("https://www.isxander.dev/photography/_MG_0860-Enhanced-NR.jpg");
         background-position: center center;
         background-clip: border-box;
     }

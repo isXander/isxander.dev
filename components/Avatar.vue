@@ -1,5 +1,5 @@
 <template>
-    <img v-if="src" ref="img" :class="`avatar size-${size} ${circle ? 'circle' : ''} ${noShadow ? 'no-shadow' : ''}  ${raised ? 'raised' : ''}`" :src="src" :alt="alt" :loading="loading" @load="updatePixelated" />
+    <img v-if="src" ref="img" :class="`avatar size-${size} ${circle ? 'circle' : ''} ${noShadow ? 'no-shadow' : ''}  ${raised ? 'raised' : ''}`" :src="src" :alt="alt" :loading="loading" />
     <svg v-else :class="`avatar ${circle ? 'circle' : ''} ${noShadow ? 'no-shadow' : ''} ${raised ? 'raised' : ''
         }`" xml:space="preserve" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
         stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 104 104" aria-hidden="true">
@@ -45,10 +45,6 @@ defineProps({
         default: false,
     },
 })
-
-function updatePixelated() {
-    pixelated.value = !!(img.value && img.value.naturalWidth && img.value.naturalWidth <= 96)
-}
 </script>
   
 <style scoped lang="scss">
