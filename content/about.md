@@ -7,38 +7,37 @@ slug = "about"
 
 # :wave: I'm Xander
 
-I create Minecraft mods using Java and Kotlin, I love doing what I'm doing.
-My mods are on [GitHub](https://github.com/isXander?tab=repositories&q=minecraft+mod),
-[Curseforge](https://www.curseforge.com/members/xanderisdev) and
-[Modrinth](https://modrinth.com/user/isxander). I occasionally do commission work for Minecraft mods
-if I see a request that particularly interests me or I feel like it will help further my learning
-and experiences. I have also tinkered with some statistical analysis and AI with
-[Python](https://github.com/isXander?tab=repositories&language=python).
+I live in :england: England, so the current time for me is :CurrentTime{timezone=Europe/London}.
+I'm usually very active on [my discord server](https://short.isxander.dev/discord), so that is usually the best place to reach me if you need anything.
 
-Another passion of mine is photography. You can read more about that and see some pictures I've taken
-[here](/photography). I've got a camera, drone and a phone with a good camera system.
+## Skills
 
-# My Successes
+### Minecraft Modding
 
-## Personal Minecraft Mods
+I create mods for Minecraft using Java and Kotlin. I have ammased over 25 million downloads and am gunning for more!
+I publish my mods on 2 sites, [Curseforge](https://www.curseforge.com/members/xanderisdev) and [Modrinth](https://modrinth.com/user/isxander), and the source code is available on [Github](https://github.com/isXander)!
 
-As of the end of April 2023, I have reached over 17 million total downloads on
-[Curseforge](https://www.curseforge.com/members/xanderisdev) alone, making a nice bonus of revenue,
-my most popular being Zoomify, Debugify and YetAnotherConfigLib, all of which are included in the
-[most popular modpack](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric) for
-[FabricMC](https://fabricmc.net).
+Modding for Minecraft is not has easy as one might think. I use the [Fabric toolchain](https://fabricmc.net) to mod, which includes regular use of [Mixin](https://github.com/Spongepowered/Mixin), a bytecode manipulation library. In most cases with Fabric, you need to modify the Minecraft source code directly to achieve your goal.
 
-| Noteable Mod                                                                    | Description                                                                                                |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [Zoomify](https://curseforge.com/minecraft/mc-mods/zoomify)                     | Adds zooming functionality to Minecraft                                                                    |
-| [Debugify](https://curseforge.com/minecraft/mc-mods/debugify)                   | Fixes bugs in the vanilla game faster than Mojang                                                          |
-| [YetAnotherConfigLib](https://curseforge.com/minecraft/mc-mods/yacl)            | A library to manage generating user-friendly config GUIs                                                   |
-| [Controlify](https://curseforge.com/minecraft/mc-mods/controlify)               | Adds controller support into Minecraft Java edition, better than Bedrock with a focus on mod compatibility |
-| [Cull Less Leaves](https://curseforge.com/minecraft/mc-mods/cull-less-leaves)   | Improves performance by skipping rendering of some leaves                                                  |
-| [AdaptiveTooltips](https://curseforge.com/minecraft/mc-mods/adaptive-tooltips)  | Highly configurable tooltip rendering, so you can *always* read them!                                      |
-| [Main Menu Credits](https://curseforge.com/minecraft/mc-mods/main-menu-credits) | Adds text to the title screen to credit modpacks                                                           |
+On some more complicated mods, I make extensive use of the Gradle build system with [over 6 subprojects](https://github.com/isXander/YetAnotherConfigLib). YetAnotherConfigLib is one mod I have made that really tought me about API safety within JVM; this library supports many mod developers and keeping a stable API is vital for people to continue to use what I have made for them.
 
-### Beginnings
+If you'd like to check out my mods, [click here to go to my mods page](/mods)!
+
+### Photography
+
+Photography is also a hobby of mine, I've got a Canon camera, and have taken many photos wherever I go, if you'd like to see all my good ones, go to my [photography page](/photography)!
+
+Here are three random samples from that page!
+
+:PhotographyGrid{limit=3 shuffle=true}
+
+### Full-stack Developer
+
+I am not afraid of branching out; the website you're reading this on is living proof. Without any prior knowledge with web frameworks, I've been able to teach myself [Nuxt3](https://nuxt.com) and [VueJS](https://vuejs.org/), along with Typescript/Javascript itself.
+
+And on the backend, I love using Kotlin's [Ktor](https://ktor.io/) library. I'm yet to actually release a full-stack web app, but I do have a few ideas in the pipeline!
+
+## Beginnings
 
 [EvergreenHUD](https://github.com/isXander/EvergreenHUD/tree/1.19) was my very first project developing
 Minecraft mods and has influenced me a lot. It was a very simple mod that added HUD elements, displaying
@@ -62,22 +61,19 @@ Today, the mod still lives on under new maintainers, [Polyfrost](https://github.
 In early April 2023, I took a commission for a youtuber, [ChrisDaCow](https://youtube.com/@ChrisDaCow)
 where I had to create a touchscreen control scheme to allow chimpanzees to play Minecraft. He then took this
 mod to [Ape Initiative](https://www.apeinitiative.org/) in Iowa where Kanzi, the eldest of the apes,
-learned how to break blocks with my controls in just 30 minutes! According to the researchers, this was the 
+learned how to break blocks with my controls in just 30 minutes! According to the researchers, this was the
 most advanced thing they had ever done on a screen!
 
-I achieved this by collaborating with the youtuber to come up with a data-driven, configurable touch 
+I achieved this by collaborating with the youtuber to come up with a data-driven, configurable touch
 interface with rows, columns and [lexigram](https://www.apeinitiative.org/lexigrams) buttons where I then
-heavily modified Minecraft so it can be controlled in game with just single taps, without the need for a 
+heavily modified Minecraft so it can be controlled in game with just single taps, without the need for a
 mouse and keyboard.
 
-Below you can see a demonstration of the mod, using a mouse as a finger, as I don't own a touchscreen
-device:
-
-![example of the mod](/images/bonobo-control-mod.gif)
-
-A video was published to YouTube about this topic, which includes me speaking about the mod.
+This all resulted in a great, entertaining video.
 
 :YoutubeEmbed{video="UKpFoYqN9-0"}
+
+You can learn more about this commission and get a techinical deep-dive on [it's own page](/mods/bonobocraft).
 
 ### Socksfor1 YouTuber
 

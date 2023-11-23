@@ -44,7 +44,7 @@
         color: $primary-lighter-color;
     }
     a:visited {
-        color: $primary-color;  
+        color: $primary-lighter-color;  
     }
 
     h1, h2, h3, h4 {
@@ -70,6 +70,13 @@
         line-height: 1.25;
         overflow-x: auto;
         border-radius: 5px;
+    }
+
+    code {
+        background-color: #333;
+        padding: 0.1rem 0.3rem;
+        border-radius: 0.3rem;
+        border: 1px solid #555;
     }
 
     

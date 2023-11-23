@@ -50,7 +50,7 @@
         <template v-if="mrProject?.gallery?.length > 0">
             <h1>Gallery</h1>
             <section id="gallery">
-                <article v-for="image in mrProject?.gallery ?? []" class="gallery-entry">
+                <article v-for="(image, idx) in mrProject?.gallery ?? []" class="gallery-entry" @click="openLightbox(idx)">
                     <img :src="image.url" class="gallery-image">
                     <div class="gallery-meta">
                         <h4>{{ image.title }}</h4>
@@ -62,9 +62,19 @@
     </div>
 </div>
 
+<FsLightbox
+    v-if="mrProject?.gallery?.length > 0"
+    :toggler="lightboxToggler"
+    :sources="mrProject?.gallery.map(image => image.url) ?? []"
+    :slide="lightboxSlide"
+    :exitFullscreenOnClose="true"/>
+
 </template>
 
 <script setup lang="ts">
+// @ts-ignore
+import FsLightbox from "fslightbox-vue/v3";
+
 definePageMeta({
     middleware: [
         function(to, from) {
@@ -97,6 +107,14 @@ useSeoMeta({
     ogImage: mod.icon ?? mrProject?.icon_url ?? "https://isxander.dev/icon.png",
 
 })
+
+const lightboxToggler = ref(false)
+const lightboxSlide = ref(0)
+
+function openLightbox(index: number) {
+    lightboxToggler.value = !lightboxToggler.value
+    lightboxSlide.value = index + 1
+}
 </script>
 
 <style scoped lang="scss">
@@ -216,6 +234,15 @@ useSeoMeta({
         width: 100%;
         height: 100%;
 
+        cursor: pointer;
+        transition: 0.25s;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 2rem rgba(black, 0.5);
+            z-index: 1i;
+        }
+
         .gallery-image {
             width: 100%;
             height: auto;
@@ -229,6 +256,10 @@ useSeoMeta({
 
             h4 {
                 margin: 0.5rem 0;
+            }
+
+            p {
+                margin: 0.8rem 0;
             }
         }
     }
