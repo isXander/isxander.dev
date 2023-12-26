@@ -2,7 +2,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "controlify": {
         title: "Controlify",
         tags: ["public", "popular"],
-        featured: false,
         sites: {
             mr: "DOUdJVEm",
             cf: "835847",
@@ -11,7 +10,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "zoomify": {
         title: "Zoomify",
         tags: ["public", "popular"],
-        featured: false,
         sites: {
             mr: "w7ThoJFB",
             cf: "574741",
@@ -20,7 +18,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "yet-another-config-lib": {
         title: "Yet<wbr>Another<wbr>Config<wbr>Lib",
         tags: ["public", "popular"],
-        featured: false,
         sites: {
             mr: "1eAoo2KR",
             cf: "667299",
@@ -29,7 +26,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "debugify": {
         title: "Debugify",
         tags: ["public", "popular"],
-        featured: false,
         sites: {
             mr: "QwxR6Gcd",
             cf: "596224",
@@ -39,22 +35,18 @@ export const xanderMods: Record<string, XanderMod> = {
         title: "Bonobocraft",
         tags: ["commission"],
         summary: "Touch controls designed for real Bonobo/Apes at ApeInitiative research centre.",
+        // @ts-ignore
         body: "/mods/bonobocraft",
         backdropImage: "/mods/bonobocraft/backdrop.webp",
         icon: "/mods/bonobocraft/logo.webp",
-        featured: true,
-        extraHeroButtons: [
-            {
-                text: "Watch Video",
-                link: "https://youtu.be/UKpFoYqN9-0",
-                strong: true,
-            }
-        ]
+        downloadReplacement: {
+            text: "Watch Video",
+            link: "https://youtu.be/UKpFoYqN9-0"
+        }
     },
     "adaptive-tooltips": {
         title: "Adaptive Tooltips",
         tags: ["public"],
-        featured: false,
         sites: {
             mr: "wFv8yCxM",
             cf: "704346",
@@ -63,7 +55,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "cull-less-leaves": {
         title: "Cull Less Leaves",
         tags: ["public"],
-        featured: false,
         sites: {
             mr: "iG6ZHsUV",
             cf: "619718"
@@ -72,7 +63,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "main-menu-credits": {
         title: "Main Menu Credits",
         tags: ["public"],
-        featured: false,
         sites: {
             mr: "qJDfP7WN",
             cf: "618812"
@@ -81,7 +71,6 @@ export const xanderMods: Record<string, XanderMod> = {
     "evergreenhud": {
         title: "EvergreenHUD",
         tags: ["public", "archived"],
-        featured: false,
         sites: {
             mr: "1yIQcc2b"
         }
@@ -106,11 +95,8 @@ export interface XanderMod {
         mr: string,
         cf?: string,
     },
-    featured: boolean,
-    showDownload?: boolean,
-    extraHeroButtons?: [{
+    downloadReplacement?: {
         text: string,
         link: string,
-        strong: boolean,
-    }]
+    }
 }

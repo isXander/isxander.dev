@@ -5,7 +5,7 @@
                 <NuxtLink to="/" id="nav-home">isXander</NuxtLink>
             </div>
             <div class="nav-row nav-right">
-                <NuxtLink to="/projects">Projects</NuxtLink>
+                <NuxtLink to="/mods">Mods</NuxtLink>
                 <NuxtLink to="/photography">Photography</NuxtLink>
                 <NuxtLink to="/about">About Me</NuxtLink>
                 <NuxtLink to="https://github.com/isXander/"><FontAwesomeIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
@@ -29,9 +29,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    margin: .75rem auto .75rem auto;
     max-width: 80rem;
-    padding: 1.25rem 1rem;
+    padding: 1rem;
     
     #nav-home {
         color: $primary-lighter-color;
@@ -42,7 +42,6 @@ header {
         &:hover {
             color: $primary-color;
             text-decoration: none;
-            transform: scale(1.1);
         }
     }
 
@@ -52,10 +51,6 @@ header {
 
         & > * {
             color: $foreground-color;
-
-            &:hover {
-                color: $foreground-color-strong;
-            }
         }
 
         gap: 1.5rem;

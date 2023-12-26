@@ -1,27 +1,9 @@
-# Bonobocraft
-
-Bonobocraft is a commission I worked on for [ChrisDaCow](https://youtube.com/@ChrisDaCow) where he taught real apes to play Minecraft. My contribution was the mod that added touch controls so the bonobos could control the game.
-
-There are many videos on YouTube documenting this adventure.
-
-The video made by me, documenting the development side. Spiralio, the map developer, and I describe what we did to make the video possible. It goes into a little technical depth and is meant to be watched after the other two videos.
-:YoutubeEmbed{video=''}
-
-Part 1 from ChrisDaCow, where Kanzi the Bonobo plays Minecraft. This is the first video about this project, and raised over $10,000 to ApeInitiative.
-:YoutubeEmbed{video='UKpFoYqN9-0'}
-
-Part 2 from ChrisDaCow, where Kanzi and Teco team up to beat the Ender Dragon in Minecraft.
-:YoutubeEmbed{video=''}
-
-All of this is based around the non-profit, ApeInitiative, who looks after these apes and provides the facilities available to Chris to be able to host such an enriching activity for them.
-
 # A technical deep-dive
 
 Bonobocraft is quite a simple mod at its roots: it enables the mouse whilst in-game and implements some simple touch-zones that you can click on. But as you dive deeper, a lot more is going on behind the scenes to make the experience truely intuitive for the bonobos.
 
 ## Table of Contents
 
-- [Bonobocraft](#bonobocraft)
 - [A technical deep-dive](#a-technical-deep-dive)
   - [Table of Contents](#table-of-contents)
   - [Input](#input)

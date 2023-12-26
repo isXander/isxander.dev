@@ -1,12 +1,10 @@
 <template>
 <div class="container">
     <section 
-      id="header-section">
-        <div 
-          id="header-background"
-          :style="{ 
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(34, 34, 34, 1.0)), url(${backdropImage ?? ''})` 
-          }"></div>
+      id="header-section" 
+      :style="{ 
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(34, 34, 34, 1.0)), url(${backdropImage ?? ''})` 
+      }">
         <div>
             <div id="title">
                 <img :src="mod.icon ?? mrProject.icon_url" alt="project icon" class="title-icon">
@@ -18,25 +16,23 @@
 
         <div id="download-section">
             <Button 
-              v-if="mrProject && (mod.showDownload ?? true)"
+              v-if="mod.downloadReplacement"
+              class="download-btn" 
+              :to="mod.downloadReplacement.link">
+                {{ mod.downloadReplacement.text }}
+            </Button>
+            <Button 
+              v-else-if="mrProject"
               class="download-btn" 
               :to="`https://modrinth.com/mod/${mod.sites!.mr}/versions`">
                 Download
             </Button>
             <Button 
-              v-else-if="cfProject && (mod.showDownload ?? true)"
+              v-else-if="cfProject"
               class="download-btn" 
               :to="`https://www.curseforge.com/minecraft/mc-mods/${cfProject.slug}/files`">
                 Download
             </Button>
-
-            <template v-for="extraButton in mod.extraHeroButtons">
-                <Button
-                  :class="extraButton.strong ? 'download-btn' : ''" 
-                  :to="extraButton.link">
-                    {{ extraButton.text }}
-                </Button>
-            </template>
             
             <h4 v-if="mrProject || cfProject" class="download-count">{{ formatNumberMetricUnits((mrProject?.downloads ?? 0) + (cfProject?.downloadCount ?? 0)) }} downloads</h4>
         </div>
@@ -123,25 +119,16 @@ function openLightbox(index: number) {
 
 <style scoped lang="scss">
 #header-section {
+    background-size: cover;
+    background-position-x: center;
+
     padding: 2rem 0;
     min-height: 75vh;
 
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-    #header-background {
-        position: absolute;
-        inset: 0;
-        top: -4rem;
-        z-index: -1;
-        background-size: cover;
-        background-position-x: center;
-        width: 100%;
-        height: calc(100% + 4rem);
-    }
 
     #title {
         display: flex;
@@ -171,14 +158,10 @@ function openLightbox(index: number) {
 
     #download-section {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
         font-size: 1.2rem;
-
-        a {
-            color: $foreground-color;
-        }
 
         .download-btn {
             font-size: 1.5rem;
