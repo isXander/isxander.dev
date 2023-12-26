@@ -22,20 +22,30 @@
                     I am a software developer who has various skills in different fields.
                     <ul>
                         <li>
+                            <FontAwesomeIcon icon="fa-solid fa-cube" class="body-icon"/>
                             <strong>Minecraft mod developer</strong>
                             <br>
                             Using Java and Kotlin, utilising the Gradle buildsystem, I create mods for Minecraft: Java Edition.
                             I have now gained over 25 million downloads across all my mods.
                         </li>
                         <li>
+                            <FontAwesomeIcon icon="fa-solid fa-globe" class="body-icon"/>
                             <strong>Full-stack web apps</strong>
                             <br>
                             Vue/NuxtJS for the frontend, and Kotlin's Ktor framework for the backend, I am able to create full-stack web apps.
                         </li>
                         <li>
+                            <FontAwesomeIcon icon="fa-solid fa-film" class="body-icon"/>
                             <strong>Video editing</strong>
                             <br>
                             I have amassed over 1.5 million views on my YouTube channel. I use DaVinci Resolve for editing.
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-linux" class="body-icon"/>
+                            <strong>Linux knowledge</strong>
+                            <br>
+                            In the past I have used Linux as a daily driver, and commonly manage Ubuntu servers to host stuff
+                            like my website and maven servers.
                         </li>
                     </ul>
                 </p>
@@ -46,14 +56,38 @@
                 <p class="info-description">
                     Due to my varied skillset, I have varying levels of experience in different programming languages.
                     <ul>
-                        <li>Java: <b>EXPERIENCED</b></li>
-                        <li>Kotlin: <b>EXPERIENCED</b></li>
-                        <li>Groovy: <b>MINIMAL</b></li>
-                        <li>Python: <b>BASIC KNOWLEDGE</b></li>
-                        <li>HTML: <b>GOOD</b></li>
-                        <li>CSS: <b>GOOD</b></li>
-                        <li>JavaScript: <b>BASIC KNOWLEDGE</b></li>
-                        <li>TypeScript: <b>BASIC KNOWLEDGE</b></li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-java" class="body-icon"/>
+                            Java: <b>EXPERIENCED</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-java" class="body-icon"/>
+                            Kotlin: <b>EXPERIENCED</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-java" class="body-icon"/>
+                            Groovy: <b>MINIMAL</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-python" class="body-icon"/>
+                            Python: <b>BASIC KNOWLEDGE</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-html5" class="body-icon"/>
+                            HTML: <b>GOOD</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-css3-alt" class="body-icon"/>
+                            CSS: <b>GOOD</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-js" class="body-icon"/>
+                            JavaScript: <b>BASIC KNOWLEDGE</b>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon icon="fa-brands fa-js" class="body-icon"/>
+                            TypeScript: <b>BASIC KNOWLEDGE</b>
+                        </li>
                     </ul>
                 </p>
             </article>
@@ -86,6 +120,8 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 </script>
 
 <style scoped lang="scss">
@@ -149,6 +185,10 @@ section {
         margin: 1rem 0 0.5rem 0;
         color: $foreground-color-strong;
     }
+
+    .info-description ul li {
+        margin: 0.5rem 0;
+    }
 }
 
 #currently-doing {
@@ -166,5 +206,10 @@ section {
             line-height: 1.5rem;
         }
     }
+}
+
+.body-icon {
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
 }
 </style>

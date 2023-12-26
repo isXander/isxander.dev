@@ -1,6 +1,6 @@
 <template>
 <main class="normal-page">
-    <h1>Minecraft Mods</h1>
+    <h1 id="minecraft-mods">Minecraft Mods</h1>
     
     <div class="project-list">
         <ProjectCard
