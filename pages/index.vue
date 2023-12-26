@@ -8,7 +8,7 @@
             <div id="socials">
                 <NuxtLink to="https://github.com/isXander"><FontAwesomeIcon icon="fa-brands fa-github"/></NuxtLink>
                 <NuxtLink to="https://isxander.dev/discord"><FontAwesomeIcon icon="fa-brands fa-discord"/></NuxtLink>
-                <NuxtLink to="https://youtube.com/@isXanderYT"><FontAwesomeIcon icon="fa-brands fa-youtube"/></NuxtLink>
+                <NuxtLink to="https://youtube.com/@isXanderDev"><FontAwesomeIcon icon="fa-brands fa-youtube"/></NuxtLink>
                 <NuxtLink to="https://instagram.com/isxander.pics"><FontAwesomeIcon icon="fa-brands fa-instagram"/></NuxtLink>
             </div>
 
