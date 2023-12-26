@@ -2,9 +2,9 @@
     <header>
         <nav id="header-container">
             <div class="nav-row nav-left">
-                <NuxtLink to="/" id="nav-home">isXander</NuxtLink>
+                <NuxtLink to="/" id="nav-home" class="monospace">isXander</NuxtLink>
             </div>
-            <div class="nav-row nav-right">
+            <div class="nav-row nav-right monospace">
                 <NuxtLink to="/projects">Projects</NuxtLink>
                 <NuxtLink to="/photography">Photography</NuxtLink>
                 <NuxtLink to="/about">About Me</NuxtLink>

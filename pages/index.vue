@@ -1,11 +1,21 @@
 <template>
     <main class="normal-page">
-        <div class="title-container regular-width">
-            <h1>I'm Xander</h1>
-            <Avatar circle src="/avatar.png"/>
-        </div>
+        <section id="title">
+            <div class="title-container">
+                <h1 class="monospace">I'm Xander</h1>
+                <Avatar circle src="/avatar.png"/>
+            </div>
+            <div id="socials">
+                <NuxtLink to="https://github.com/isXander"><FontAwesomeIcon icon="fa-brands fa-github"/></NuxtLink>
+                <NuxtLink to="https://isxander.dev/discord"><FontAwesomeIcon icon="fa-brands fa-discord"/></NuxtLink>
+                <NuxtLink to="https://youtube.com/@isXanderYT"><FontAwesomeIcon icon="fa-brands fa-youtube"/></NuxtLink>
+                <NuxtLink to="https://instagram.com/isxander.pics"><FontAwesomeIcon icon="fa-brands fa-instagram"/></NuxtLink>
+            </div>
 
-        <section id="info" class="regular-width">
+            <q id="dumb-quote">it works on my machine...</q>
+        </section>
+
+        <section id="info">
             <article class="info-box section-card">
                 <h2 class="info-title">Skills</h2>
                 <p class="info-description">
@@ -49,7 +59,7 @@
             </article>
         </section>
 
-        <section id="currently-doing" class="large-width">
+        <section id="currently-doing">
             <h1>What I'm doing right now</h1>
 
             <div class="project-list">
@@ -79,36 +89,54 @@
 </script>
 
 <style scoped lang="scss">
-.regular-width {
-    max-width: 80rem;
-    margin: 0 auto 5rem auto;
+section {
+    margin-bottom: 5rem;
 }
 
-.large-width {
-    max-width: 100rem;
-    margin: 0 auto 5rem auto;
-}
-
-.regular-page {
-    max-width: none;
-}
-
-.title-container {
+#title {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
 
+    .title-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
 
-    h1 {
-        margin: 0;
-        font-size: 5rem;
-        color: $foreground-color-strong;
+        h1 {
+            margin: 0;
+            font-size: 5rem;
+            color: $foreground-color-strong;
+        }
+
+        .avatar {
+            box-shadow: rgba(black, 0.2) 0 10px;
+        }
     }
 
-    .avatar {
-        box-shadow: rgba(black, 0.2) 0 10px;
+    #socials {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        & > * {
+            font-size: 2rem;
+            color: $foreground-color;
+
+            &:hover {
+                color: $foreground-color-strong;
+            }
+        }
+    }
+
+    #dumb-quote {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        color: $foreground-color-weak;
     }
 }
 

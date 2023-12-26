@@ -2,9 +2,13 @@
 @import "~/assets/css/markdown.scss";
 @import "~/assets/css/util.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
 html {
     font-size: 16px;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     background-color: $background-color;
     color: $foreground-color;
 }
@@ -96,4 +100,12 @@ pre {
     padding: 0.1rem 0.3rem;
     border-radius: 0.3rem;
     border: 1px solid #555;
+}
+
+pre, code {
+    font-family: 'Fira Code', monospace;
+}
+
+.monospace {
+    font-family: 'Fira Code', monospace;
 }
