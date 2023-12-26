@@ -2,8 +2,8 @@
 <div id="dropdown" @click="toggle()">
     <slot name="current">{{ currentItem }}</slot>
 
-    <FontAwesomeIcon v-if="!open" icon="fa-solid fa-caret-down" size="sm"/>
-    <FontAwesomeIcon v-else icon="fa-solid fa-caret-up" size="sm"/>
+    <FAIcon v-if="!open" icon="fa-solid fa-caret-down" size="sm"/>
+    <FAIcon v-else icon="fa-solid fa-caret-up" size="sm"/>
 
     <div id="dropdown-items" v-if="open">
         <slot v-for="[item, onclick] in Object.entries(items)" :name="item">

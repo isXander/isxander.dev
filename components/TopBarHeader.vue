@@ -8,7 +8,7 @@
                 <NuxtLink to="/projects">Projects</NuxtLink>
                 <NuxtLink to="/photography">Photography</NuxtLink>
                 <NuxtLink to="/about">About Me</NuxtLink>
-                <NuxtLink to="https://github.com/isXander/"><FontAwesomeIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
+                <NuxtLink to="https://github.com/isXander/"><FAIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
             </div>
         </nav>
     </header>

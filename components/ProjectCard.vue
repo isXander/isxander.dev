@@ -7,7 +7,7 @@
         <p class="project-summary">{{ summary ?? `` }}</p>
         <div class="project-tags">
             <span v-for="tag in tags" class="project-tag">
-                <FontAwesomeIcon :icon="tagIcons[tag]" />
+                <FAIcon :icon="tagIcons[tag]" />
                 {{ tag }}
             </span>
         </div>
