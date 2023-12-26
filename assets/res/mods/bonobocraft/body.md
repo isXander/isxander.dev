@@ -1,9 +1,14 @@
+# Bonobocraft
+
+Bonobocraft is a commission I worked on for [ChrisDaCow](https://youtube.com/@ChrisDaCow) where he taught real apes to play Minecraft. My contribution was the mod that added touch controls so the bonobos could control the game.
+
 # A technical deep-dive
 
 Bonobocraft is quite a simple mod at its roots: it enables the mouse whilst in-game and implements some simple touch-zones that you can click on. But as you dive deeper, a lot more is going on behind the scenes to make the experience truely intuitive for the bonobos.
 
 ## Table of Contents
 
+- [Bonobocraft](#bonobocraft)
 - [A technical deep-dive](#a-technical-deep-dive)
   - [Table of Contents](#table-of-contents)
   - [Input](#input)
