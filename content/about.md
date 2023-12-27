@@ -29,7 +29,7 @@ Photography is also a hobby of mine, I've got a Canon camera, and have taken man
 
 Here are three random samples from that page!
 
-:PhotographyGrid{limit=3 shuffle=true}
+:PhotographyGrid{limit=+3 shuffle=true}
 
 ### Full-stack Developer
 

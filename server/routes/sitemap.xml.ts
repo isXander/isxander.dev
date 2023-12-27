@@ -7,11 +7,11 @@ export default defineEventHandler(async (event) => {
     })
 
     Object.entries(xanderMods).forEach(([slug, mod]) => {
-        sitemap.write({ url: `/mods/${slug}`, changefreq: 'daily', priority: 0.8 })
+        sitemap.write({ url: `/projects/${slug}`, changefreq: 'daily', priority: 0.8 })
     })
 
     sitemap.write({ url: '/', changefreq: 'daily', priority: 1.0 })
-    sitemap.write({ url: '/mods', changefreq: 'daily', priority: 0.9 })
+    sitemap.write({ url: '/projects', changefreq: 'daily', priority: 0.9 })
     sitemap.write({ url: '/about', changefreq: 'daily', priority: 0.9 })
     sitemap.write({ url: '/photography', changefreq: 'daily', priority: 0.9 })
 

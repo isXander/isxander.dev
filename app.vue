@@ -5,6 +5,12 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  meta: [
+    { name: 'darkreader-lock' }
+  ]
+})
+
 useSeoMeta({
   title: "isXander's Website",
   ogTitle: "isXander's Website",

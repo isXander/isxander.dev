@@ -5,10 +5,11 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content",
     '@nuxt/image',
+    '@vueuse/nuxt',
   ],
   css: [
     "~/assets/css/main.scss",
-    '@fortawesome/fontawesome-svg-core/styles.css'
+    '@fortawesome/fontawesome-free/css/all.css',
   ],
   vite: {
     css: {
