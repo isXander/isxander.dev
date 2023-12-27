@@ -43,7 +43,7 @@ const props = defineProps({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .project-card,
 .project-card:hover {
     color: $foreground-color;
