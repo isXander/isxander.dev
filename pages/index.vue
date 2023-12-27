@@ -141,6 +141,7 @@ section {
             margin: 0;
             font-size: 5rem;
             color: $foreground-color-strong;
+            text-align: center;
         }
 
         .avatar {
@@ -168,6 +169,20 @@ section {
         margin-top: 2rem;
         font-size: 1.5rem;
         color: $foreground-color-weak;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 660px) {
+        gap: 1rem;
+
+        .title-container {
+            flex-direction: column-reverse;
+            gap: 1rem;
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
     }
 }
 
@@ -184,11 +199,25 @@ section {
     .info-description ul li {
         margin: 0.5rem 0;
     }
+
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+
+        .info-title {
+            font-size: 2rem;
+        }
+    }
 }
 
 #currently-doing {
     h1 {
         text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        h1 {
+            font-size: 2rem;
+        }
     }
 
     .project-list > article {
@@ -199,6 +228,16 @@ section {
         & > p {
             font-size: 1.1rem;
             line-height: 1.5rem;
+        }
+
+        @media screen and (max-width: 900px) {
+            grid-template-columns: 1fr;
+
+            & > p {
+                font-size: 1rem;
+                line-height: normal;
+                margin-top: 0;
+            }
         }
     }
 }
