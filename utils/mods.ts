@@ -46,7 +46,7 @@ export const xanderMods: Record<string, XanderMod> = {
         extraHeroButtons: [
             {
                 text: "Watch Video",
-                link: "https://youtu.be/UKpFoYqN9-0",
+                link: "https://youtu.be/rk1Lc_SC7Bg",
                 strong: true,
             },
             {
