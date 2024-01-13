@@ -1,10 +1,3 @@
---- 
-draft = false
-date = 2023-04-11T13:22:22+01:00
-title = "About Me"
-slug = "about" 
----
-
 # :wave: I'm Xander
 
 I live in :england: England, so the current time for me is :CurrentTime{timezone=Europe/London}.

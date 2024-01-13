@@ -48,6 +48,11 @@ export const xanderMods: Record<string, XanderMod> = {
                 text: "Watch Video",
                 link: "https://youtu.be/UKpFoYqN9-0",
                 strong: true,
+            },
+            {
+                text: "Download Modpack",
+                link: "https://modrinth.com/modpack/bonobocraft",
+                strong: false,            
             }
         ]
     },

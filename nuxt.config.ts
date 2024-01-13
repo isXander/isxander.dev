@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     '@nuxt/image',
     '@vueuse/nuxt',
+    'vue3-carousel-nuxt',
   ],
   css: [
     "~/assets/css/main.scss",
@@ -29,7 +30,15 @@ export default defineNuxtConfig({
   content: {
     contentHead: false,
     highlight: {
-      theme: 'github-dark'
+      theme: 'github-dark',
+      preload: [
+        'java',
+        'json',
+        'json5',
+        'groovy',
+        'kotlin',
+        'python',
+      ]
     },
     markdown: {
       rehypePlugins: [

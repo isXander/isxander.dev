@@ -10,6 +10,7 @@
                 <NuxtLink to="https://isxander.dev/discord"><FAIcon icon="fa-brands fa-discord"/></NuxtLink>
                 <NuxtLink to="https://youtube.com/@isXanderDev"><FAIcon icon="fa-brands fa-youtube"/></NuxtLink>
                 <NuxtLink to="https://instagram.com/isxander.pics"><FAIcon icon="fa-brands fa-instagram"/></NuxtLink>
+                <NuxtLink to="https://ko-fi.com/isxander"><FAIcon icon="fa-solid fa-dollar-sign"/></NuxtLink>
             </div>
 
             <q id="dumb-quote">it works on my machine...</q>
