@@ -8,7 +8,7 @@
                 <NuxtLink to="/projects">Projects</NuxtLink>
                 <NuxtLink to="/photography">Photography</NuxtLink>
                 <NuxtLink to="/about">About Me</NuxtLink>
-                <NuxtLink to="https://github.com/isXander/"><FAIcon icon="fa-brands fa-github" size="xl"/></NuxtLink>
+                <NuxtLink to="https://github.com/isXander/"><FAIcon icon="fa-brands fa-github fa-xl"/></NuxtLink>
             </div>
         </nav>
     </header>
@@ -38,6 +38,7 @@ header {
         font-size: 1.3rem;
         font-weight: 500;
         transition: 0.3s;
+        transition-property: transform, color;
 
         &:hover {
             color: $primary-color;
