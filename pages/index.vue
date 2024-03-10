@@ -3,7 +3,7 @@
         <section id="title">
             <div class="title-container">
                 <h1 class="monospace">I'm Xander</h1>
-                <Avatar circle src="/avatar.png"/>
+                <Avatar circle src="/avatar.webp"/>
             </div>
             <div id="socials">
                 <NuxtLink to="https://github.com/isXander"><FAIcon icon="fa-brands fa-github"/></NuxtLink>
@@ -14,6 +14,8 @@
             </div>
 
             <q id="dumb-quote">it works on my machine...</q>
+
+            <NuxtLink to="mailto:business@isxander.dev" id="contact-button">Contact</NuxtLink>
         </section>
 
         <section id="info">
@@ -28,6 +30,8 @@
                             <br>
                             Using Java and Kotlin, utilising the Gradle buildsystem, I create mods for Minecraft: Java Edition.
                             I have now gained over 25 million downloads across all my mods.
+
+                            Check out my <a href="/projects">projects page</a> for all my mods!
                         </li>
                         <li>
                             <FAIcon icon="fa-solid fa-globe" class="body-icon"/>
@@ -56,38 +60,39 @@
                 <h2 class="info-title">Programming Languages</h2>
                 <p class="info-description">
                     Due to my varied skillset, I have varying levels of experience in different programming languages.
+                    I will put them in order of my experience with it. Most experienced at the top, least at the bottom.
                     <ul>
                         <li>
                             <FAIcon icon="fa-brands fa-java" class="body-icon"/>
-                            Java: <b>EXPERIENCED</b>
+                            Java
                         </li>
                         <li>
                             <FAIcon icon="fa-brands fa-java" class="body-icon"/>
-                            Kotlin: <b>EXPERIENCED</b>
+                            Kotlin
                         </li>
                         <li>
-                            <FAIcon icon="fa-brands fa-java" class="body-icon"/>
-                            Groovy: <b>MINIMAL</b>
+                            <FAIcon icon="fa-brands fa-rust" class="body-icon"/>
+                            Rust
                         </li>
                         <li>
-                            <FAIcon icon="fa-brands fa-python" class="body-icon"/>
-                            Python: <b>BASIC KNOWLEDGE</b>
+                            <FAIcon icon="fa-brands fa-js" class="body-icon"/>
+                            JavaScript
+                        </li>
+                        <li>
+                            <FAIcon icon="fa-brands fa-js" class="body-icon"/>
+                            TypeScript
                         </li>
                         <li>
                             <FAIcon icon="fa-brands fa-html5" class="body-icon"/>
-                            HTML: <b>GOOD</b>
+                            HTML
                         </li>
                         <li>
                             <FAIcon icon="fa-brands fa-css3-alt" class="body-icon"/>
-                            CSS: <b>GOOD</b>
+                            CSS
                         </li>
                         <li>
-                            <FAIcon icon="fa-brands fa-js" class="body-icon"/>
-                            JavaScript: <b>BASIC KNOWLEDGE</b>
-                        </li>
-                        <li>
-                            <FAIcon icon="fa-brands fa-js" class="body-icon"/>
-                            TypeScript: <b>BASIC KNOWLEDGE</b>
+                            <FAIcon icon="fa-brands fa-python" class="body-icon"/>
+                            Python
                         </li>
                     </ul>
                 </p>
@@ -100,19 +105,20 @@
             <div class="project-list">
                 <article>
                     <ProjectCard
-                      slug="bonobocraft"
-                      :title="xanderMods.bonobocraft.title"
-                      :summary="xanderMods.bonobocraft.summary"
-                      :icon="xanderMods.bonobocraft.icon"
+                      slug="controlify"
+                      :title="xanderMods.controlify.title"
+                      :summary="xanderMods.controlify.summary"
+                      :icon="xanderMods.controlify.icon"
+                      :tags="xanderMods.controlify.tags"
                       />
                     <p>
-                        Bonobocraft is probably my proudest project. 
-                        A commission for YouTuber <a href="https://youtube.com/@ChrisDaCow">ChrisDaCow</a>,
-                        I developed a Minecraft mod to add highly specialised touch controls to the game to allow
-                        real-life Bonobos (a type of ape) to play Minecraft. This has rasied over $10,000 towards
-                        the non-profit research facility that takes care of the bonobos.
-
-                        I have also documented the development of this journey on my YouTube channel.
+                        Controlify is one of my most advanced mods yet. Minecraft: Java Edition has been missing
+                        controller support for a long time, and this mod fixes that. I have learnt the ways of
+                        Java Native Access (JNA) to interface with SDL3 to get controller input. This may not be
+                        my most popular mod, but I see it to be my proudest and most advanced.
+                        <br>
+                        It includes support for advanced controller features such as gyro and vibration, and has
+                        helped parents get their kids into modded Minecraft with an easier-to-use input scheme.
                     </p>
                 </article>
             </div>
@@ -171,6 +177,14 @@ section {
         font-size: 1.5rem;
         color: $foreground-color-weak;
         text-align: center;
+    }
+
+    #contact-button {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border: 0.2rem solid $primary-lighter-color;
+        border-radius: 1rem;
     }
 
     @media screen and (max-width: 660px) {

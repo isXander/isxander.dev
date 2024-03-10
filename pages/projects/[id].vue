@@ -55,7 +55,7 @@
             <h1>Gallery</h1>
             <section id="gallery">
                 <article v-for="(image, idx) in mrProject?.gallery ?? []" class="gallery-entry" @click="openLightbox(idx)">
-                    <img :src="image.url" class="gallery-image">
+                    <img :src="image.url" class="gallery-image" loading="lazy">
                     <div class="gallery-meta">
                         <h4>{{ image.title }}</h4>
                         <p>{{ image.description }}</p>
