@@ -1,7 +1,9 @@
 export const xanderMods: Record<string, XanderMod> = {
     "controlify": {
         title: "Controlify",
-        tags: ["public", "popular"],
+        tags: ["minecraft", "popular"],
+        summary: "Adds advanced controller support to Minecraft: Java Edition",
+        icon: "/mods/controlify/icon.webp",
         featured: false,
         sites: {
             mr: "DOUdJVEm",
@@ -10,7 +12,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "zoomify": {
         title: "Zoomify",
-        tags: ["public", "popular"],
+        tags: ["minecraft", "popular"],
         featured: false,
         sites: {
             mr: "w7ThoJFB",
@@ -19,7 +21,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "yet-another-config-lib": {
         title: "Yet<wbr>Another<wbr>Config<wbr>Lib",
-        tags: ["public", "popular"],
+        tags: ["minecraft", "popular"],
         featured: false,
         sites: {
             mr: "1eAoo2KR",
@@ -28,7 +30,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "debugify": {
         title: "Debugify",
-        tags: ["public", "popular"],
+        tags: ["minecraft", "popular"],
         featured: false,
         sites: {
             mr: "QwxR6Gcd",
@@ -37,7 +39,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "bonobocraft": {
         title: "Bonobocraft",
-        tags: ["commission"],
+        tags: ["minecraft", "commission"],
         summary: "Touch controls designed for real Bonobo/Apes at ApeInitiative research centre.",
         body: "/mods/bonobocraft",
         backdropImage: "/mods/bonobocraft/backdrop.webp",
@@ -58,7 +60,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "adaptive-tooltips": {
         title: "Adaptive Tooltips",
-        tags: ["public"],
+        tags: ["minecraft"],
         featured: false,
         sites: {
             mr: "wFv8yCxM",
@@ -67,7 +69,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "cull-less-leaves": {
         title: "Cull Less Leaves",
-        tags: ["public"],
+        tags: ["minecraft"],
         featured: false,
         sites: {
             mr: "iG6ZHsUV",
@@ -76,7 +78,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "main-menu-credits": {
         title: "Main Menu Credits",
-        tags: ["public"],
+        tags: ["minecraft"],
         featured: false,
         sites: {
             mr: "qJDfP7WN",
@@ -85,7 +87,7 @@ export const xanderMods: Record<string, XanderMod> = {
     },
     "evergreenhud": {
         title: "EvergreenHUD",
-        tags: ["public", "archived"],
+        tags: ["minecraft", "archived"],
         featured: false,
         sites: {
             mr: "1yIQcc2b"
@@ -98,6 +100,7 @@ export const tagIcons: Record<string, string> = {
     "popular": "fa-solid fa-fire",
     "commission": "fa-solid fa-dollar-sign",
     "archived": "fa-solid fa-box-archive",
+    "minecraft": "fa-brands fa-java",
 }
 
 export interface XanderMod {
