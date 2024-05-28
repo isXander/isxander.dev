@@ -37,7 +37,7 @@ function TitleSection() {
     <section className={`${styles.section} ${styles.titleSection}`}>
       <div className={styles.hello}>
         <h1 className={`${fira_code.className} ${styles.text}`}>I'm Xander</h1>
-        <Avatar circle src="/avatar.webp" className={styles.avatar} />
+        <Avatar circle src="/avatar.webp" alt="avatar" className={styles.avatar} />
       </div>
       <div className={styles.socials}>
         <Link href="https://github.com/isXander">
