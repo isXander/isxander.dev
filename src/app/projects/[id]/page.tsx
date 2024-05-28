@@ -7,6 +7,7 @@ import Button from "@/app/ui/Button"
 import { serialize } from 'next-mdx-remote/serialize'
 import ClientMDXRemote from "./ClientMDXRemote"
 import GallerySection from "./Gallery"
+import { Metadata, ResolvingMetadata } from "next"
 
 type PageProps = {
     params: { id: string }
@@ -28,6 +29,26 @@ export async function generateStaticParams() {
     }))
 }
 
+export async function generateMetadata(
+    { params }: PageProps,
+    parent: ResolvingMetadata,
+): Promise<Metadata> {
+    const local = projects[params.id]
+
+    const title = `${local.title} - Minecraft Mod`
+    const description = `${local.summary} - Download the Minecraft Mod ${local.title} by isXander`
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: local.icon?.src
+        },
+        robots: 'all'
+    }
+}
+
 export default async function ProjectPage({
     params
 }: PageProps) {
@@ -41,7 +62,6 @@ export default async function ProjectPage({
         modrinth: local.sites?.mr ? await useModrinthProject(local.sites.mr) : undefined,
         curseforge: local.sites?.cf ? await useCurseforgeProject(local.sites.cf) : undefined,
     }
-    console.log(project.modrinth?.body)
 
     return (
         <main>
