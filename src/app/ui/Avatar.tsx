@@ -1,21 +1,25 @@
 import Image from "next/image";
 import styles from "./Avatar.module.scss";
 
-type AvatarProps = {
-  src: string | undefined;
-  alt: string;
-  circle: boolean;
+export type AvatarProps = {
+  src: string | undefined,
+  alt: string,
+  circle: boolean,
+  size: number,
 };
+
 export default function Avatar({
   src,
   alt = "Avatar",
   circle = false,
+  size = 6,
 }: AvatarProps) {
   let classes = `${styles.avatar} ${circle ? styles.circle : ""}`;
 
+
   if (src) {
     return (
-      <Image src={src} alt={alt} className={classes} width={96} height={96} />
+      <Image src={src} alt={alt} className={classes} width={16 * size} height={16 * size} />
     );
   } else {
     return (

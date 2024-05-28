@@ -1,0 +1,27 @@
+.errorCode {
+    font-size: 10rem;
+    font-weight: 900;
+    color: $primary-color;
+    margin-bottom: auto;
+}
+
+.errorMessage {
+    font-size: 3rem;
+    font-weight: 900;
+    color: $foreground-color;
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
+
+.backButton {
+    text-decoration: none;
+    color: $foreground-color;
+    padding: 1rem;
+    background-color: $primary-color;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+
+    &:hover {
+        background-color: $primary-lighter-color;
+    }
+}

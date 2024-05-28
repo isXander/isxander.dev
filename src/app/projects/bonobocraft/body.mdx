@@ -1,0 +1,140 @@
+import Image from 'next/image'
+import breakLexigram from "./lexigrams/break.png"
+import clutchLexigram from "./lexigrams/clutch.png"
+import eatLexigram from "./lexigrams/eat.png"
+import giveLexigram from "./lexigrams/give.png"
+import touchZonesImage from "./touch-zones.png"
+
+# Bonobocraft
+
+"Bonobocraft" is a project which involves teaching Bonobos (a type of Ape) to play Minecraft.
+
+I was responsible for developing a mod that allows the Bonobos to play Minecraft with specialised touch
+controls designed specifically for them. You can see Teco, one of the apes, playing another research game with
+the same type of controls [here](https://youtu.be/lkllvEOClXw).
+
+You can download and use the mod that the Bonobos used [on Modrinth](https://modrinth.com/mod/bonobocraft).
+
+The mod was not the only part of Bonobocraft. Spiralio played a significant role in making this happen, being
+the map developer who made all of the levels that the Bonobos played on. He made really cool stuff with datapacks
+including auto-generating cave pieces with structure blocks and lots of texture modelling work.
+
+The main point of Bonobocraft is to make YouTube video's for [Chris](https://youtube.com/@ChrisDaCow).
+
+{/* :YoutubeCarousel{:videos='["rk1Lc_SC7Bg", "UKpFoYqN9-0", "nhV3nYhgQdc"]' :itemsToShow='3'} */}
+
+1. The first video made by me, featuring Spiralio, the map developer. We talk about the development side that led to
+the two other videos made by [ChrisDaCow](https://youtube.com/@ChrisDaCow), the youtuber who made it all possible.
+2. Part 1, Kanzi the Bonobo plays Minecraft with my touch controls.
+3. Part 2, where Kanzi and Teco team up to beat the Ender Dragon in Minecraft.
+
+This was all made possible by the non-profit, [ApeInitiative](https://apeinitiative.org),
+who looks after the Apes seen in this videos.
+[Please donate](https://www.paypal.com/donate?hosted_button_id=XFENBVSH7FVUJ) to them to help improve their
+facilities and allow the Bonobos to have more experiences like this.
+
+## Try it for yourself
+
+You can try out both the mod and the maps that went into making this all happen.
+
+Click [here](https://modrinth.com/modpack/bonobocraft) to go to the modrinth page to download either
+Part 1 or Part 2!
+
+## Table of Contents
+
+- [Bonobocraft](#bonobocraft)
+  - [Try it for yourself](#try-it-for-yourself)
+  - [Table of Contents](#table-of-contents)
+  - [A technical deep-dive](#a-technical-deep-dive)
+    - [Input](#input)
+      - [Touch Look](#touch-look)
+      - [Touch Walk](#touch-walk)
+      - [Button Row](#button-row)
+      - [Touch Entity](#touch-entity)
+    - [Systems](#systems)
+      - [Auto Player Task](#auto-player-task)
+      - [Animation System](#animation-system)
+
+## A technical deep-dive
+
+Bonobocraft is quite a simple mod at its roots: it enables the mouse whilst in-game and implements some simple touch-zones that you can click on. But as you dive deeper, a lot more is going on behind the scenes to make the experience truely intuitive for the bonobos.
+
+### Input
+
+#### Touch Look
+
+8 touch zones around the edge of the screen move the player camera in each direction.
+
+|           |      |            | 
+| --------- | ---- | ---------- |
+| Up+Left   | Up   | Up+Right   |
+| Left      | ---  | Right      |
+| Down+Left | Down | Down+Right |
+
+This behaviour is almost what the Bonobos expect. Their primitive brains just touch what they want to look at. I could have implemented this, but the researchers decided it would be more cognitively challenging if they were to learn these more basic controls.
+
+After a certain period of time, the pitch of the player is re-centered to something just below straight forward (to avoid looking into Enderman's eyes). This is to help the Bonobos in case they get stuck looking up, it also makes the video more interesting.
+
+<Image src={touchZonesImage} alt="touch zones" />
+
+#### Touch Walk
+
+The middle [sector of the screen](#touch-look) is used for walking forward. Upon pressing, the 'W' key will be emulated for a second or so.
+
+This behaviour is already familiar to the Bonobos, who have done screen tasks like this in the past.
+
+#### Button Row
+
+At the top center of the screen, a row of buttons (or [lexigrams](https://www.apeinitiative.org/lexigrams)) are visible which do various actions.
+
+Throughout the development of Bonobocraft, many buttons have been made, but at it's final state, only 3 are ever shown/enabled:
+
+| Button | Action                                        | Lexigram             | Narration  | Featured In |
+| ------ | --------------------------------------------- | -------------------- | ---------- | ------------|
+| Eat    | [Auto player task](#auto-player-task): Eat    | <Image src={eatLexigram} alt="eat lexigram" /> | `"eat"`    | Part 2 |
+| Share  | [Auto player task](#auto-player-task): Share  | <Image src={giveLexigram} alt="give lexigram" /> | `"share"`  | Part 2 |
+| Clutch | [Auto player task](#auto-player-task): Clutch | <Image src={clutchLexigram} alt="clutch lexigram" /> | `"clutch"` | Part 2 |
+
+#### Touch Entity
+
+### Systems
+
+There are many internal systems that make up the Bonobocraft mod, some obvious, some not.
+
+#### Auto Player Task
+
+An API responsible for stringing together simple player tasks, creating more complex tasks.
+
+For example, if you want a player to eat something, you split this action up into individual actions like:
+
+1. Finding a food item
+2. Switching to the food item
+3. Using the food item
+4. Switching back to the previous slot
+
+In a sense this is almost like the AI system that are attached to mobs where they have separate goals, but only
+one action can take place at a time.
+
+Whilst a task is in progress, all input is blocked to prevent the Bonobos from interfering with whatever is going
+on.
+
+These actions are either triggered through a [button](#button-row) or through a [touch of an entity](#touch-entity).
+
+#### Animation System
+
+Behind the scenes, an animation system exists that handles the various smooth movements and animations.
+For example, using the [touch look](#touch-look) input triggers an animation that powers the smooth looking
+animation, or using the `/indicate` command to get the spinning and zooming.
+
+```java
+Animator.INSTANCE.play(
+    new Animator.AnimationInstance(durationTicks, t -> t)
+        .addConsumer(x -> setX(x), start, end)
+);
+```
+
+Here is an example of the animation system.
+
+::Centered
+*This page has not yet been completed*
+::
