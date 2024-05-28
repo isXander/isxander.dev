@@ -1,6 +1,6 @@
-import { projects } from "./projects";
-import { ProjectCardFromProject } from "../ui/project/ProjectCard";
-import styles from "./page.module.scss";
+import { projects } from "./projects"
+import { ProjectCardFromProject } from "../ui/project/ProjectCard"
+import styles from "./page.module.scss"
 
 export default function Page() {
     return (
