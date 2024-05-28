@@ -16,6 +16,6 @@ export default function Page() {
 
 function ProjectList() {
     return Object.entries(projects).map(([slug, project]) => (
-        <ProjectCardFromProject project={project} slug={slug} />
+        <ProjectCardFromProject project={project} slug={slug} key={slug} />
     ))
 }

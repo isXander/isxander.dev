@@ -45,8 +45,8 @@ export default function ProjectCard({
 }
 
 function Tags({tags} : {tags: Array<ProjectTag>}) {
-    return tags.map(tag => (
-        <span className={styles.tag}>
+    return tags.map((tag, idx) => (
+        <span className={styles.tag} key={idx}>
             <FontAwesomeIcon icon={tag.icon} />
             { tag.name }
         </span>
@@ -57,6 +57,7 @@ export async function ProjectCardFromProject({
     project, slug
 } : { project: Project, slug: string }) {
     const modrinth = project.sites?.mr ? await useModrinthProject(project.sites.mr) : undefined
+    
     return (
         <ProjectCard 
             slug={slug}

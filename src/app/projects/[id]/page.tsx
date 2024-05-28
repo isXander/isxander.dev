@@ -52,15 +52,16 @@ export async function generateMetadata(
 export default async function ProjectPage({
     params
 }: PageProps) {
-    const local = projects[params.id]
-    if (!local) {
-        return notFound()
-    }
+    const local: Project | undefined = projects[params.id]
 
     const project: ProjectInfo = {
         local,
-        modrinth: local.sites?.mr ? await useModrinthProject(local.sites.mr) : undefined,
-        curseforge: local.sites?.cf ? await useCurseforgeProject(local.sites.cf) : undefined,
+        modrinth: local?.sites?.mr ? await useModrinthProject(local.sites.mr) : undefined,
+        curseforge: local?.sites?.cf ? await useCurseforgeProject(local.sites.cf) : undefined,
+    }
+
+    if (!local) {
+        return notFound()
     }
 
     return (

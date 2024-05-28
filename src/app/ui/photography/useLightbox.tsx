@@ -27,7 +27,7 @@ export default function useLightbox() {
                     {...props} 
                 />
             ) : null,
-        [open, interactive]
+        [open, interactive, index]
     )
 
     return { openLightbox, renderLightbox }

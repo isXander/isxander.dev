@@ -7,11 +7,11 @@ import styles from "./page.module.scss"
 export default function GallerySection({
     project: { local, modrinth, curseforge }
 }: SectionProps) {
+    const { openLightbox, renderLightbox } = useLightbox()
+
     const gallery = modrinth?.gallery
     if ((gallery?.length ?? 0) == 0) 
         return undefined
-
-    const { openLightbox, renderLightbox } = useLightbox()
 
     return (
         <section className="normal-page">

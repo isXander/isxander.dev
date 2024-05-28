@@ -36,7 +36,7 @@ function TitleSection() {
   return (
     <section className={`${styles.section} ${styles.titleSection}`}>
       <div className={styles.hello}>
-        <h1 className={`${fira_code.className} ${styles.text}`}>I'm Xander</h1>
+        <h1 className={`${fira_code.className} ${styles.text}`}>I&apos;m Xander</h1>
         <Avatar circle src="/avatar.webp" alt="avatar" className={styles.avatar} />
       </div>
       <div className={styles.socials}>
@@ -103,7 +103,7 @@ function SkillsArticle() {
           <FontAwesomeIcon icon={faGlobe} className={styles.bodyIcon} />
           <strong>Full-stack web apps</strong>
           <br />
-          Vue/NuxtJS for the frontend, and Kotlin's Ktor framework for the
+          Vue/NuxtJS for the frontend, and Kotlin&apos;s Ktor framework for the
           backend, I am able to create full-stack web apps.
         </li>
         <li>
