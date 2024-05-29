@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import styles from "./page.module.scss"
-import { CurseforgeMod, ModrinthMod, useCurseforgeProject, useModrinthProject } from "@/app/lib/publishers"
+import { CurseforgeMod, ModrinthMod, fetchCurseforgeProject, fetchModrinthProject } from "@/app/lib/publishers"
 import { Project, projects } from "../projects"
 import Image from "next/image"
 import Button from "@/app/ui/Button"
@@ -56,8 +56,8 @@ export default async function ProjectPage({
 
     const project: ProjectInfo = {
         local,
-        modrinth: local?.sites?.mr ? await useModrinthProject(local.sites.mr) : undefined,
-        curseforge: local?.sites?.cf ? await useCurseforgeProject(local.sites.cf) : undefined,
+        modrinth: local?.sites?.mr ? await fetchModrinthProject(local.sites.mr) : undefined,
+        curseforge: local?.sites?.cf ? await fetchCurseforgeProject(local.sites.cf) : undefined,
     }
 
     if (!local) {

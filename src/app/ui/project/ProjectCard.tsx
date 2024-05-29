@@ -1,7 +1,7 @@
 import Link from "next/link"
 import styles from "./ProjectCard.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useModrinthProject } from "@/app/lib/publishers";
+import { fetchModrinthProject } from "@/app/lib/publishers";
 import { Project, ProjectTag } from "@/app/projects/projects";
 import Image, { StaticImageData } from "next/image";
 
@@ -56,7 +56,7 @@ function Tags({tags} : {tags: Array<ProjectTag>}) {
 export async function ProjectCardFromProject({
     project, slug
 } : { project: Project, slug: string }) {
-    const modrinth = project.sites?.mr ? await useModrinthProject(project.sites.mr) : undefined
+    const modrinth = project.sites?.mr ? await fetchModrinthProject(project.sites.mr) : undefined
     
     return (
         <ProjectCard 
