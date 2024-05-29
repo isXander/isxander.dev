@@ -60,7 +60,6 @@ function NextJsImage({
                 src={slide.src}
                 loading="eager"
                 draggable={false}
-                placeholder={slide.blurDataURL ? "blur" : undefined}
                 style={{
                     objectFit: cover ? "cover" : "contain",
                     cursor: click ? "pointer" : undefined,
