@@ -139,11 +139,11 @@ export type Project = {
         cf?: string,
     },
     showDownload?: boolean,
-    extraHeroButtons?: [{
+    extraHeroButtons?: {
         text: string,
         link: string,
         strong: boolean,
-    }]
+    }[]
 }
 
 export type ProjectTag = {
