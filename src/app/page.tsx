@@ -99,7 +99,7 @@ function InfoSection() {
           This valueable experience has taught me the ways of working for a client&apos;s needs and deadlines, rather than my own.
         </p>
         <p>
-          This hobby has helped fund my life, ammounting at (as of June 2024) 60 million downloads.
+          This hobby has helped fund my life, amounting at (as of June 2024) 60 million downloads.
           It&apos;s something I&apos;m extremely proud of and will continue to work on for the forseeable future.
           You can view my accounts on 
           <Link href="https://www.curseforge.com/members/xanderisdev/projects">Curseforge</Link> and 
