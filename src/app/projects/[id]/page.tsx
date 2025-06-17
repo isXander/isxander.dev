@@ -113,7 +113,7 @@ function HeroSection({
                 {((local.showDownload ?? true) && (modrinth || curseforge)) ? (
                     <Button
                         href={modrinth 
-                            ? `https://modrinth.com/mod/${modrinth!.slug}/versions` 
+                            ? `https://modrinth.com/mod/${modrinth!.slug}/versions#download` 
                             : `https://www.curseforge.com/minecraft/mc-mods/${curseforge!.slug}/files`} 
                         className={styles.downloadButton}>
                             Download
