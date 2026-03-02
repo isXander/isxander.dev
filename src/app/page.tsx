@@ -1,25 +1,6 @@
-import styles from "./page.module.scss";
 import Avatar from "./ui/Avatar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faDiscord,
-  faYoutube,
-  faInstagram,
-  faLinux,
-  faJava,
-  faRust,
-  faJs,
-  faHtml5,
-  faCss3Alt,
-  faPython,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faCube,
-  faDollarSign,
-  faFilm,
-  faGlobe,
-} from "@fortawesome/free-solid-svg-icons";
+import { SiGithub, SiDiscord, SiYoutube, SiInstagram } from "@icons-pack/react-simple-icons";
+import { DollarSign } from "lucide-react";
 import Link from "next/link";
 import { fira_code } from "./fonts";
 import YoutubeEmbed from "./ui/YoutubeEmbed";
@@ -37,34 +18,32 @@ export default function Home() {
 
 function TitleSection() {
   return (
-    <section className={`${styles.section} ${styles.titleSection}`}>
-      <div className={styles.hello}>
-        <h1 className={`${fira_code.className} ${styles.text}`}>I&apos;m Xander</h1>
-        <Avatar circle src="/avatar.webp" alt="avatar" className={styles.avatar} />
+    <section className="mb-20 items-center flex flex-col justify-center">
+      <div className="flex flex-row items-center gap-8 justify-center max-[660px]:flex-col-reverse max-[660px]:gap-4">
+        <h1 className={`${fira_code.className} m-0 text-center text-[5rem] text-white max-[660px]:text-[3rem]`}>I'm Xander</h1>
+        <Avatar circle src="/avatar.webp" alt="avatar" className="shadow-[0_10px_rgba(0,0,0,0.2)]" />
       </div>
-      <div className={styles.socials}>
-        <Link href="https://github.com/isXander">
-          <FontAwesomeIcon icon={faGithub} />
+      <div className="items-center flex flex-row gap-4">
+        <Link href="https://github.com/isXander" className="text-foreground hover:text-foreground-strong">
+          <SiGithub size={32} color="currentColor" />
         </Link>
-        <Link href="https://isxander.dev/discord">
-          <FontAwesomeIcon icon={faDiscord} />
+        <Link href="https://isxander.dev/discord" className="text-foreground hover:text-foreground-strong">
+          <SiDiscord size={32} color="currentColor" />
         </Link>
-        <Link href="https://youtube.com/@isXanderDev">
-          <FontAwesomeIcon icon={faYoutube} />
+        <Link href="https://youtube.com/@isXanderDev" className="text-foreground hover:text-foreground-strong">
+          <SiYoutube size={32} color="currentColor" />
         </Link>
-        <Link href="https://instagram.com/isxander.pics">
-          <FontAwesomeIcon icon={faInstagram} />
+        <Link href="https://instagram.com/isxander.pics" className="text-foreground hover:text-foreground-strong">
+          <SiInstagram size={32} color="currentColor" />
         </Link>
-        <Link href="https://ko-fi.com/isxander">
-          <FontAwesomeIcon icon={faDollarSign} />
+        <Link href="https://ko-fi.com/isxander" className="text-foreground hover:text-foreground-strong">
+          <DollarSign size={32} />
         </Link>
       </div>
-
-      <q className={styles.dumbQuote}>it works on my machine...</q>
-
+      <q className="mt-8 text-center text-[1.5rem] text-foreground-weak">it works on my machine...</q>
       <Link
         href="mailto:business@isxander.dev"
-        className={styles.contactButton}
+        className="rounded-2xl mt-8 p-2 text-[1.5rem] border-[3.2px] border-solid border-primary-light"
       >
         Contact
       </Link>
@@ -74,35 +53,35 @@ function TitleSection() {
 
 function InfoSection() {
   return (
-    <section className={`${styles.section} ${styles.infoSection}`}>
-      <SkillEntry 
-          title="Minecraft Modding" 
-          tags={["Java", "Kotlin", "Gradle", "Maven", "Maintaining Libraries", "Bytecode Manip", "Commissions"]} 
+    <section className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] max-[800px]:grid-cols-1">
+      <SkillEntry
+          title="Minecraft Modding"
+          tags={["Java", "Kotlin", "Gradle", "Maven", "Maintaining Libraries", "Bytecode Manip", "Commissions"]}
           experience={{ text: 'very experienced', progress: 0.98 }}>
         <p>
           I spend most of my free time working on modifications for Minecraft: Java Edition.
           This involves work with <strong>Java</strong>, <strong>Kotlin</strong> and <strong>Gradle</strong> build system.
-          To mod a Java application, extensive knowledge of the JVM&apos;s bytecode is required. I employ runtime bytecode manipulation techniques, 
+          To mod a Java application, extensive knowledge of the JVM&apos;s bytecode is required. I employ runtime bytecode manipulation techniques,
           primarily powered by <Link href="https://github.com/SpongePowered/Mixin">Mixin</Link> and ASM libraries.
         </p>
         <p>
           Some of these mods are also libraries. Their functionality is to provide utility for other modifications.
           One such example is <Link href="projects/yet-another-config-lib">YetAnotherConfigLib</Link>.
           This mod has been downloaded over 17 million times, and used by many other mods that aren&apos;t even my own.
-          This has forced me to learn the ways of maintaining a library, providing
+          This has forced me to learn the ways of maintaining a library, providing{' '}
           <Link href="https://docs.isxander.dev/yet-another-config-lib">documentation</Link>, maintaining API compatibility,
           adhearing to semver and publishing maven artifacts. Many other mod developers depend on this mod, and love using it!
         </p>
         <p>
-          I have also been commissioned by multiple YouTubers to create mods for their videos: 
+          I have also been commissioned by multiple YouTubers to create mods for their videos:
           namely <Link href="https://youtu.be/UKpFoYqN9-0">ChrisDaCow</Link> and <Link href="https://youtu.be/_IYVOuLYLUs">Socksfor1</Link>.
           This valueable experience has taught me the ways of working for a client&apos;s needs and deadlines, rather than my own.
         </p>
         <p>
           This hobby has helped fund my life, amounting at (as of June 2024) 60 million downloads.
           It&apos;s something I&apos;m extremely proud of and will continue to work on for the forseeable future.
-          You can view my accounts on 
-          <Link href="https://www.curseforge.com/members/xanderisdev/projects">Curseforge</Link> and 
+          You can view my accounts on{' '}
+          <Link href="https://www.curseforge.com/members/xanderisdev/projects">Curseforge</Link> and{' '}
           <Link href="https://modrinth.com/user/isxander">Modrinth</Link>, sites dedicated to publishing mods.
         </p>
       </SkillEntry>
@@ -118,7 +97,7 @@ function InfoSection() {
               I somehow managed to create this voxel engine without any prior reading on how voxel engines work. I figured it out myself.
               This voxel engine is available on GitHub, <Link href="https://github.com/isXander/VoxelEngine">here</Link>.
             </p>
-            <Image src={voxelEngineImg} className={styles.fittedImage} alt="voxel engine screenshot" />
+            <Image src={voxelEngineImg} className="h-auto w-full shadow-[0_0_5px_rgba(0,0,0,0.2)]" alt="voxel engine screenshot" />
             <ProgressBar progress={0.7} />
           </li>
           <li>
@@ -178,8 +157,8 @@ function InfoSection() {
           I have no experience in other languages or frameworks for building REST APIs, just Kotlin+Ktor, for now.
         </p>
       </SkillEntry>
-      <SkillEntry 
-          title="Frontend Web Dev" 
+      <SkillEntry
+          title="Frontend Web Dev"
           tags={["React", "Vue", "TypeScript", "JavaScript", "Node", "HTML", "CSS"]}
           experience={{ text: 'intermediate', progress: 0.4 }}>
         <p>
@@ -200,27 +179,27 @@ function InfoSection() {
 
 function SkillEntry({
   title, tags, children, experience
-}: { 
+}: {
   title: string,
   tags?: string[],
   children: React.ReactNode,
   experience?: { text: string, progress: number }
 }) {
   const tagDivs = tags?.map((tag, idx) => (
-    <div className={styles.tag} key={idx}>{tag}</div>
+    <div className="uppercase font-bold" key={idx}>{tag}</div>
   ))
 
   return (
-    <article className={`section-card ${styles.skillEntry}`}>
+    <article className="section-card flex flex-col justify-between">
       <div>
-        <h2 className={styles.infoTitle}>{title}</h2>
-        {tagDivs ? <div className={styles.tagList}>{tagDivs}</div> : undefined}
+        <h2 className="m-0 text-white text-[2rem] max-[800px]:text-[1.5rem]">{title}</h2>
+        {tagDivs ? <div className="[row-gap:0.3rem] gap-x-6 flex flex-row flex-wrap">{tagDivs}</div> : undefined}
 
         {children}
       </div>
       {experience ? <ProgressBar text={experience.text} progress={experience.progress} /> : undefined}
     </article>
-  )
+  );
 }
 
 function ProgressBar({
@@ -230,58 +209,11 @@ function ProgressBar({
   progress: number,
 }) {
   return (
-    <div className={styles.progressContainer}>
-      {text ? <div className={styles.progressText}>{text}</div> : undefined}
-      <div className={styles.progressBackground}>
-        <div className={styles.progressForeground} style={{width: `${progress * 100}%`}} />
+    <div className="flex flex-col gap-2 mt-2">
+      {text ? <div className="text-right text-[1.5rem]">{text}</div> : undefined}
+      <div className="rounded-2xl h-4 relative w-full bg-background">
+        <div className="transition-[width] duration-1000 rounded-2xl h-full bg-primary" style={{width: `${progress * 100}%`}} />
       </div>
     </div>
-  )
-}
-
-function LanguagesArticle() {
-  return (
-    <article className="section-card">
-      <h2 className={styles.infoTitle}>Programming Languages</h2>
-      <p className={styles.infoDescription}>
-        Due to my varied skillset, I have varying levels of experience in
-        different programming languages. I will put them in order of my
-        experience with it. Most experienced at the top, least at the bottom.
-      </p>
-      <ul>
-        <li>
-          <FontAwesomeIcon icon={faJava} className={styles.bodyIcon} />
-          Java
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faJava} className={styles.bodyIcon} />
-          Kotlin
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faRust} className={styles.bodyIcon} />
-          Rust
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faJs} className={styles.bodyIcon} />
-          JavaScript
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faJs} className={styles.bodyIcon} />
-          TypeScript
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faHtml5} className={styles.bodyIcon} />
-          HTML
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faCss3Alt} className={styles.bodyIcon} />
-          CSS
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faPython} className={styles.bodyIcon} />
-          Python
-        </li>
-      </ul>
-    </article>
   );
 }

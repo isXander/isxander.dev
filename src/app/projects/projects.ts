@@ -1,6 +1,5 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import { faJava } from "@fortawesome/free-brands-svg-icons"
-import { faBoxArchive, faDollarSign, faFire, faGlobe } from "@fortawesome/free-solid-svg-icons"
+import { ComponentType, type JSX } from "react";
+import { Archive, Blocks, DollarSign, Flame, Globe } from "lucide-react"
 import { StaticImageData } from "next/image"
 import controlifyIcon from "./controlify/icon.webp"
 import bonobocraftIcon from "./bonobocraft/logo.webp"
@@ -9,23 +8,23 @@ import bonobocraftBackdrop from "./bonobocraft/backdrop.webp"
 
 export const tagPublic: ProjectTag = {
     name: "Public",
-    icon: faGlobe,
+    icon: Globe,
 }
 export const tagPopular: ProjectTag = {
     name: "Popular",
-    icon: faFire,
+    icon: Flame,
 }
 export const tagCommission: ProjectTag = {
     name: "Commission",
-    icon: faDollarSign,
+    icon: DollarSign,
 }
 export const tagArchived: ProjectTag = {
     name: "Archived",
-    icon: faBoxArchive,
+    icon: Archive,
 }
 export const tagMinecraft: ProjectTag = {
     name: "Minecraft",
-    icon: faJava,
+    icon: Blocks,
 }
 
 export const projects: Record<string, Project> = {
@@ -148,5 +147,5 @@ export type Project = {
 
 export type ProjectTag = {
     name: string,
-    icon: IconProp,
+    icon: ComponentType<{ size?: number | string; color?: string; className?: string }>,
 }

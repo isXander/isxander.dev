@@ -1,5 +1,4 @@
 import Link from "next/link"
-import styles from "./Button.module.scss"
 
 export type ButtonProps = {
     href?: string,
@@ -15,14 +14,14 @@ export default function Button({
         return (
             <Link
                 href={href}
-                className={`${className} ${styles.container}`}
+                className={`flex justify-center items-center flex-row ${className}`}
             >{children}</Link>
         )
     } else if (action) {
         return (
             <button
                 onClick={action}
-                className={`${className} ${styles.container}`}
+                className={`flex justify-center items-center flex-row ${className}`}
             >{children}</button>
         )
     }

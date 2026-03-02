@@ -1,10 +1,10 @@
 import { Fetcher } from "swr"
 
 export const fetchModrinthProject = (slug: string) =>
-    fetch(`https://api.modrinth.com/v2/project/${slug}`).then(res => res.json()).then(res => res as ModrinthMod)
+    fetch(`https://api.modrinth.com/v2/project/${slug}`, { next: { revalidate: 3600 } }).then(res => res.json()).then(res => res as ModrinthMod)
 
 export const fetchCurseforgeProject = (slug: string) =>
-    fetch(`https://api.curse.tools/v1/cf/mods/${slug}`).then(res => res.json()).then(res => res.data as CurseforgeMod)
+    fetch(`https://api.curse.tools/v1/cf/mods/${slug}`, { next: { revalidate: 3600 } }).then(res => res.json()).then(res => res.data as CurseforgeMod)
 
 export const modrinthProjectFetcher: Fetcher<ModrinthMod, string> = (slug) => 
     fetch(`https://api.modrinth.com/v2/project/${slug}`).then(res => res.json())

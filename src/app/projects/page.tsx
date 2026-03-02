@@ -1,13 +1,12 @@
 import { projects } from "./projects"
 import { ProjectCardFromProject } from "../ui/project/ProjectCard"
-import styles from "./page.module.scss"
 
 export default function Page() {
     return (
         <main className="normal-page">
             <h1>My Projects</h1>
 
-            <div className={styles.projectList}>
+            <div className="grid [grid-template-columns:repeat(auto-fill,minmax(20rem,1fr))] gap-4">
                 <ProjectList />
             </div>
         </main>

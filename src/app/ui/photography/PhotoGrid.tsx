@@ -1,7 +1,6 @@
 'use client'
 
 import Image from "next/image"
-import styles from "./PhotoGrid.module.scss"
 import useLightbox from "./useLightbox"
 
 export type PhotoEntry = {
@@ -22,14 +21,18 @@ export default function PhotoGrid({
 
     return (
         <div>
-            <div className={styles.grid}>
+            <div className="grid [grid-template-columns:repeat(auto-fill,minmax(20rem,1fr))] [grid-auto-rows:20rem] gap-4">
                 {photos.map((photo, idx) => (
-                    <div className={styles.entryContainer} key={idx} onClick={() => openLightbox(idx)}>
+                    <div
+                        className="relative w-full h-full cursor-pointer transition-transform duration-[250ms] ease-in-out hover:scale-105"
+                        key={idx}
+                        onClick={() => openLightbox(idx)}
+                    >
                         <Image
                             src={photo.src}
                             alt={photo.alt}
                             fill
-                            className={styles.entry}
+                            className="object-cover"
                             quality={60}
                             sizes={"500px"}
                         />

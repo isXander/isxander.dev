@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./css/main.scss";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import "./globals.css";
+import "./css/syntax-highlighting.css";
 import NavBar from "./ui/NavBar";
 import Footer from "./ui/Footer";
 import { montserrat } from "./fonts";
